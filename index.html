@@ -1,0 +1,1634 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>株式会社クラリオ｜採用コンサルティング</title>
+<meta name="description" content="株式会社クラリオは、専門人材の採用戦略設計から運用改善までを支援する採用コンサルティング会社です。">
+<style>
+  :root {
+    --paper: #FFFFFF;
+    --paper-raised: #F6F6F3;
+    --ink: #14181F;
+    --ink-soft: #575F6B;
+    --ink-faint: #8A93A0;
+    --line: rgba(20, 24, 31, 0.12);
+    --line-soft: rgba(20, 24, 31, 0.07);
+    --accent: #B8892F;
+    --accent-strong: #8C6520;
+    --accent-tint: rgba(184, 137, 47, 0.10);
+    --shadow: 0 1px 2px rgba(20, 24, 31, 0.05);
+    --navy: #0F1620;
+    --navy-raised: #171F2C;
+    --on-navy: #F3F5F8;
+    --on-navy-soft: #9BA6B8;
+    --line-on-navy: rgba(255, 255, 255, 0.12);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #12161C;
+      --paper-raised: #191F27;
+      --ink: #ECEEF2;
+      --ink-soft: #AEB6C2;
+      --ink-faint: #7C8492;
+      --line: rgba(236, 238, 242, 0.14);
+      --line-soft: rgba(236, 238, 242, 0.08);
+      --accent: #E3B563;
+      --accent-strong: #F0C67C;
+      --accent-tint: rgba(227, 181, 99, 0.14);
+      --shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+      --navy: #0B0F16;
+      --navy-raised: #141B26;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --paper: #12161C;
+    --paper-raised: #191F27;
+    --ink: #ECEEF2;
+    --ink-soft: #AEB6C2;
+    --ink-faint: #7C8492;
+    --line: rgba(236, 238, 242, 0.14);
+    --line-soft: rgba(236, 238, 242, 0.08);
+    --accent: #E3B563;
+    --accent-strong: #F0C67C;
+    --accent-tint: rgba(227, 181, 99, 0.14);
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    --navy: #0B0F16;
+    --navy-raised: #141B26;
+  }
+
+  :root[data-theme="light"] {
+    --paper: #FFFFFF;
+    --paper-raised: #F6F6F3;
+    --ink: #14181F;
+    --ink-soft: #575F6B;
+    --ink-faint: #8A93A0;
+    --line: rgba(20, 24, 31, 0.12);
+    --line-soft: rgba(20, 24, 31, 0.07);
+    --accent: #B8892F;
+    --accent-strong: #8C6520;
+    --accent-tint: rgba(184, 137, 47, 0.10);
+    --shadow: 0 1px 2px rgba(20, 24, 31, 0.05);
+    --navy: #0F1620;
+    --navy-raised: #171F2C;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { background: var(--paper); }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic Medium", "Yu Gothic", "Noto Sans JP", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-feature-settings: "palt" 1;
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  .serif { font-family: "Hiragino Mincho ProN", "YuMincho", "Yu Mincho", "Noto Serif JP", "Times New Roman", serif; }
+
+  .mono { font-family: ui-monospace, "SF Mono", "Roboto Mono", "Courier New", monospace; }
+
+  h1, h2, h3 { text-wrap: balance; margin: 0; }
+
+  a { color: inherit; }
+
+  .eyebrow {
+    font-family: ui-monospace, "SF Mono", "Roboto Mono", monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 0.9rem;
+  }
+
+  .eyebrow-row {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    font-family: ui-monospace, "SF Mono", "Roboto Mono", monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #E3B563;
+    margin-bottom: 0.9rem;
+  }
+
+  .beacon {
+    flex: none;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #E3B563;
+    animation: pulse 2.6s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(227, 181, 99, 0.35); }
+    50% { box-shadow: 0 0 0 7px transparent; }
+  }
+
+  /* ---------- reveal-on-scroll ---------- */
+
+  [data-reveal] {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  [data-reveal].is-visible { opacity: 1; transform: translateY(0); }
+
+  @media (prefers-reduced-motion: reduce) {
+    [data-reveal] { transition: none !important; opacity: 1 !important; transform: none !important; }
+    .hero-glow, .beacon { animation: none !important; }
+    .dash-chart .bar { transition: none !important; transform: scaleY(1) !important; }
+  }
+
+  /* ---------- header ---------- */
+
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.1rem clamp(1.25rem, 4vw, 3rem);
+    background: color-mix(in srgb, var(--navy) 92%, transparent);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line-on-navy);
+  }
+
+  .wordmark {
+    display: flex;
+    align-items: baseline;
+    gap: 0.65rem;
+    text-decoration: none;
+    color: var(--on-navy);
+  }
+
+  .wordmark .mark {
+    font-family: ui-monospace, "SF Mono", "Roboto Mono", monospace;
+    font-size: 0.95rem;
+    letter-spacing: 0.32em;
+    font-weight: 600;
+    color: #E3B563;
+  }
+
+  .wordmark .full {
+    font-size: 0.95rem;
+    color: var(--on-navy-soft);
+    letter-spacing: 0.02em;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    gap: clamp(1.1rem, 2.4vw, 1.8rem);
+    font-size: 0.9rem;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: var(--on-navy-soft);
+    transition: color 0.15s ease;
+  }
+
+  nav a:not(.cta-link) { position: relative; padding-bottom: 3px; }
+
+  nav a:not(.cta-link)::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 100%;
+    bottom: -2px;
+    height: 1px;
+    background: #E3B563;
+    transition: right 0.25s ease;
+  }
+
+  nav a:not(.cta-link):hover::after { right: 0; }
+
+  nav a:hover, nav a:focus-visible { color: var(--on-navy); }
+
+  nav a.cta-link {
+    color: var(--on-navy);
+    border: 1px solid var(--line-on-navy);
+    padding: 0.5rem 1.1rem;
+    border-radius: 2px;
+    transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+  }
+
+  nav a.cta-link:hover { border-color: #E3B563; color: #E3B563; background: rgba(227, 181, 99, 0.1); }
+
+  @media (max-width: 780px) {
+    nav .nav-primary { display: none; }
+  }
+
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+
+  /* ---------- shared section rhythm ---------- */
+
+  section { padding: clamp(5rem, 11vw, 9rem) clamp(1.25rem, 4vw, 3rem); }
+
+  .col { max-width: 880px; margin: 0 auto; }
+
+  .section-head { max-width: 620px; margin-bottom: clamp(2.5rem, 5vw, 3.5rem); }
+
+  .section-head h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); font-weight: 600; letter-spacing: 0.01em; }
+
+  .section-head p { margin: 1rem 0 0; color: var(--ink-soft); font-size: 1rem; }
+
+  /* ---------- hero ---------- */
+
+  .hero {
+    position: relative;
+    padding: clamp(6rem, 16vw, 10.5rem) clamp(1.25rem, 4vw, 3rem) clamp(5.5rem, 11vw, 8rem);
+    overflow: hidden;
+    background: var(--navy);
+    color: var(--on-navy);
+  }
+
+  .hero-glow {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .hero-glow .circle {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(3px);
+    opacity: 0.55;
+  }
+
+  .hero-glow .c1 {
+    width: 34rem; height: 34rem; right: -9rem; top: -12rem;
+    background: radial-gradient(circle at 35% 35%, rgba(227, 181, 99, 0.35), rgba(227, 181, 99, 0) 68%);
+    animation: drift 26s ease-in-out infinite alternate;
+  }
+
+  .hero-glow .c2 {
+    width: 20rem; height: 20rem; left: -6rem; bottom: -8rem;
+    background: radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0) 70%);
+    animation: drift 20s ease-in-out infinite alternate-reverse;
+  }
+
+  .hero-glow .ring {
+    width: 26rem; height: 26rem; right: 8%; bottom: -14rem;
+    border: 1px solid rgba(227, 181, 99, 0.22);
+    background: none;
+    filter: none;
+    opacity: 1;
+  }
+
+  @keyframes drift {
+    from { transform: translate(0, 0) scale(1); }
+    to { transform: translate(-4%, 5%) scale(1.08); }
+  }
+
+  @media (prefers-reduced-motion: reduce) { .hero-glow .circle { animation: none; } }
+
+  .hero-inner { position: relative; z-index: 1; max-width: 820px; }
+
+  .hero .en-line {
+    display: block;
+    font-family: ui-monospace, "SF Mono", "Roboto Mono", monospace;
+    font-size: 0.82rem;
+    letter-spacing: 0.16em;
+    color: var(--on-navy-soft);
+    margin: 1.3rem 0 0;
+  }
+
+  .hero h1 {
+    font-size: clamp(3rem, 7.4vw, 5rem);
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: 0.01em;
+    color: var(--on-navy);
+  }
+
+  .hero .lede { margin: 1.9rem 0 0; max-width: 32rem; font-size: 1.05rem; color: var(--on-navy-soft); }
+
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2.75rem; }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.85rem 1.6rem;
+    font-size: 0.92rem;
+    text-decoration: none;
+    border-radius: 2px;
+    border: 1px solid transparent;
+    transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(23, 34, 42, 0.12); }
+
+  .btn-primary { background: var(--ink); color: var(--paper-raised); }
+
+  .btn-ghost { border-color: var(--line); color: var(--ink); }
+  .btn-ghost:hover { border-color: var(--accent); color: var(--accent-strong); box-shadow: none; }
+
+  .hero .btn-primary { background: #E3B563; color: var(--navy); }
+  .hero .btn-primary:hover { box-shadow: 0 6px 18px rgba(227, 181, 99, 0.25); }
+
+  .hero .btn-ghost { border-color: var(--line-on-navy); color: var(--on-navy); }
+  .hero .btn-ghost:hover { border-color: #E3B563; color: #E3B563; box-shadow: none; }
+
+  /* ---------- trust strip ---------- */
+
+  .strip { border-top: 1px solid var(--line-soft); border-bottom: 1px solid var(--line-soft); background: var(--paper-raised); }
+
+  .strip .col { padding: 1.4rem clamp(1.25rem, 4vw, 3rem); display: flex; align-items: baseline; gap: 0.9rem; flex-wrap: wrap; }
+
+  .strip .tag {
+    font-family: ui-monospace, "SF Mono", "Roboto Mono", monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    color: var(--accent);
+    border: 1px solid var(--line);
+    padding: 0.2rem 0.55rem;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+
+  .strip p { margin: 0; color: var(--ink-soft); font-size: 0.95rem; }
+
+  /* ---------- services ---------- */
+
+  .service-list { border-top: 1px solid var(--line); }
+
+  .service-row {
+    display: grid;
+    grid-template-columns: minmax(0, 15rem) 1fr;
+    gap: 1rem 3rem;
+    padding: 2rem 1rem;
+    margin: 0 -1rem;
+    border-bottom: 1px solid var(--line);
+    transition: background-color 0.25s ease;
+  }
+
+  .service-row:hover { background: var(--accent-tint); }
+
+  .service-row h3 { font-size: 1.1rem; font-weight: 600; }
+
+  .service-row p { margin: 0; color: var(--ink-soft); }
+
+  @media (max-width: 620px) { .service-row { grid-template-columns: 1fr; gap: 0.6rem; } }
+
+  /* ---------- flow (process timeline) ---------- */
+
+  .flow { position: relative; }
+
+  .flow::before {
+    content: "";
+    position: absolute;
+    left: 1.05rem;
+    top: 0.6rem;
+    bottom: 0.6rem;
+    width: 1px;
+    background: var(--line);
+  }
+
+  .flow-step { position: relative; padding: 0 0 2.1rem 3.4rem; }
+
+  .flow-step:last-child { padding-bottom: 0; }
+
+  .flow-step .num {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 2.15rem;
+    height: 2.15rem;
+    border-radius: 50%;
+    border: 1px solid var(--line);
+    background: var(--paper);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: ui-monospace, "SF Mono", "Roboto Mono", monospace;
+    font-size: 0.76rem;
+    color: var(--ink-faint);
+    transition: transform 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+  }
+
+  .flow-step.is-core .num { border-color: var(--accent); color: var(--accent-strong); background: var(--accent-tint); }
+
+  .flow-step:hover .num { transform: scale(1.12); border-color: var(--accent); color: var(--accent-strong); }
+
+  .flow-step h3 { font-size: 1.02rem; font-weight: 600; margin-bottom: 0.35rem; }
+
+  .flow-step p { margin: 0; color: var(--ink-soft); font-size: 0.94rem; }
+
+  .flow-loop {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin: 2rem 0 0 0.05rem;
+    padding: 1.1rem 1.3rem;
+    border: 1px dashed var(--line);
+    color: var(--ink-soft);
+    font-size: 0.9rem;
+  }
+
+  .flow-loop .icon { color: var(--accent); font-size: 1.1rem; line-height: 1.3; }
+
+  .contract-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 3rem; }
+
+  .contract-card { border: 1px solid var(--line); padding: 1.75rem; transition: border-color 0.25s ease, transform 0.25s ease; }
+
+  .contract-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+
+  .contract-card .eyebrow { margin-bottom: 0.6rem; }
+
+  .contract-card p { margin: 0; color: var(--ink-soft); font-size: 0.92rem; }
+
+  @media (max-width: 620px) { .contract-grid { grid-template-columns: 1fr; } }
+
+  /* ---------- dashboard (product preview) ---------- */
+
+  .dash-frame {
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    overflow: hidden;
+    background: #f4f5f7;
+    box-shadow: 0 24px 50px -28px rgba(23, 34, 42, 0.4);
+  }
+
+  .dash-frame-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.65rem 0.9rem;
+    background: #eceef3;
+    border-bottom: 1px solid #e2e5ec;
+  }
+
+  .dash-dot { width: 9px; height: 9px; border-radius: 50%; flex: none; }
+
+  .dash-frame-title {
+    margin-left: 0.5rem;
+    font-family: ui-monospace, "SF Mono", "Roboto Mono", monospace;
+    font-size: 0.72rem;
+    color: #767c8c;
+  }
+
+  .dash-screen {
+    padding: clamp(1.1rem, 3vw, 1.75rem);
+    color: #1f2330;
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  }
+
+  /* filter card */
+  .dash-filter-card {
+    background: #fff;
+    border: 1px solid #e6e8ee;
+    border-radius: 12px;
+    padding: 0.95rem 1.1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 10px rgba(20, 25, 40, 0.05);
+  }
+
+  .dash-filter-top { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.85rem; padding-bottom: 0.85rem; border-bottom: 1px solid #eef0f4; }
+
+  .dash-pill-btn { font-size: 0.7rem; font-weight: 700; padding: 0.35rem 0.85rem; border-radius: 8px; border: 1px solid #e6e8ee; background: #fff; color: #4c5866; white-space: nowrap; cursor: pointer; font-family: inherit; }
+  .dash-pill-btn.active { background: #1f2937; border-color: #1f2937; color: #fff; }
+
+  .dash-filter-dates { display: flex; align-items: center; gap: 0.45rem; font-size: 0.68rem; color: #9aa2b1; margin-left: 0.3rem; }
+  .dash-date-box { border: 1px solid #e6e8ee; border-radius: 6px; padding: 0.3rem 0.55rem; font-variant-numeric: tabular-nums; color: #1f2330; background: #fbfbfc; font-size: 0.72rem; font-family: inherit; }
+
+  .dash-filter-dropdowns { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .dash-search-input, .dash-select {
+    font-size: 0.7rem; font-weight: 600; color: #4c5866; font-family: inherit;
+    border: 1px solid #e6e8ee; border-radius: 6px; padding: 0.35rem 0.7rem;
+    background: #fbfbfc; white-space: nowrap;
+  }
+  .dash-select { cursor: pointer; }
+  .dash-search-input { width: 8.5rem; }
+  .dash-search-input::placeholder { color: #9aa2b1; font-weight: 500; }
+
+  @media (max-width: 680px) { .dash-filter-dates { width: 100%; margin-left: 0; } }
+
+  /* KPI funnel rows */
+  .dash-kpi-row { display: flex; background: #fff; border: 1px solid #e6e8ee; border-radius: 12px; overflow-x: auto; box-shadow: 0 2px 10px rgba(20, 25, 40, 0.05); margin-bottom: 0.55rem; }
+
+  .dash-kpi-card { flex: 1 1 0; min-width: 122px; padding: 0.9rem 1.05rem; border-bottom: 3px solid var(--kpi-color, #4868e0); }
+
+  .dash-kpi-card .k-label { font-size: 0.62rem; font-weight: 600; color: #767c8c; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 0.3rem; }
+
+  .dash-kpi-card .k-value { font-size: 1.32rem; font-weight: 700; color: #1f2330; font-variant-numeric: tabular-nums; line-height: 1.15; }
+
+  .dash-kpi-card .k-sub { margin-top: 0.5rem; font-size: 0.7rem; color: #767c8c; }
+  .dash-kpi-card .k-sub b { font-variant-numeric: tabular-nums; color: #1f2330; font-weight: 700; margin-left: 0.2rem; }
+
+  .dash-kpi-card .f-breakdown { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-top: 0.55rem; }
+
+  .f-pill { font-size: 0.58rem; font-weight: 700; padding: 0.15rem 0.45rem; border-radius: 20px; white-space: nowrap; }
+  .f-pill.progress { background: rgba(72, 104, 224, 0.1); color: #4868e0; }
+  .f-pill.pass { background: rgba(31, 169, 127, 0.12); color: #1fa97f; }
+  .f-pill.reject { background: rgba(224, 72, 72, 0.1); color: #e04848; }
+  .f-pill.withdraw { background: rgba(224, 151, 43, 0.12); color: #c07a1f; }
+
+  .dash-kpi-connector {
+    flex: 0 0 66px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.15rem;
+    padding: 0.3rem;
+    background: #fafbfd;
+    border-left: 1px dashed #e6e8ee;
+    border-right: 1px dashed #e6e8ee;
+    font-family: ui-monospace, "SF Mono", "Roboto Mono", monospace;
+  }
+
+  .dash-kpi-connector .arrow { font-size: 0.7rem; color: #a7adb8; }
+  .dash-kpi-connector .rate { font-size: 0.84rem; font-weight: 800; }
+  .dash-kpi-connector .rate-label { font-size: 0.54rem; color: #9aa2b1; text-align: center; line-height: 1.3; margin-top: 0.1rem; }
+
+  @media (max-width: 780px) {
+    .dash-kpi-row { flex-direction: column; }
+    .dash-kpi-card { border-bottom: none; border-left: 3px solid var(--kpi-color, #4868e0); }
+    .dash-kpi-connector { flex-direction: row; flex: none; padding: 0.35rem 0; gap: 0.5rem; border-left: none; border-right: none; border-top: 1px dashed #e6e8ee; border-bottom: 1px dashed #e6e8ee; }
+    .dash-kpi-connector .rate-label { text-align: left; margin-top: 0; }
+  }
+
+  .dash-transition { display: flex; align-items: center; gap: 0.4rem; font-size: 0.76rem; color: #4c5866; font-weight: 600; margin: 0.85rem 0 0.85rem 0.2rem; }
+  .dash-transition .arrow-down { color: #4868e0; }
+
+  .dash-footnote { font-size: 0.66rem; color: #9aa2b1; line-height: 1.7; margin: 0.9rem 0 1.4rem; }
+
+  /* trend chart grid */
+  .dash-chart-toolbar { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.9rem; }
+  .dash-chart-toolbar .ct-label { font-size: 0.72rem; font-weight: 600; color: #767c8c; }
+  .dash-seg { display: inline-flex; border: 1px solid #e6e8ee; border-radius: 8px; overflow: hidden; }
+  .dash-seg span { font-size: 0.7rem; font-weight: 700; padding: 0.35rem 0.85rem; background: #fff; color: #4c5866; border-right: 1px solid #e6e8ee; cursor: pointer; }
+  .dash-seg span:last-child { border-right: none; }
+  .dash-seg span.active { background: #364fc7; color: #fff; }
+
+  .dash-chart-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.85rem; margin-bottom: 1.1rem; }
+
+  .dash-chart-card { background: #fff; border: 1px solid #e6e8ee; border-radius: 12px; padding: 0.9rem 1rem 0.7rem; box-shadow: 0 2px 10px rgba(20, 25, 40, 0.05); }
+
+  .dash-chart-card .cc-head { display: flex; align-items: baseline; justify-content: space-between; gap: 0.5rem; margin-bottom: 0.55rem; }
+  .dash-chart-card .cc-title { font-size: 0.72rem; color: #1f2330; }
+  .dash-chart-card .cc-title b { font-weight: 700; font-variant-numeric: tabular-nums; }
+  .dash-chart-card .cc-legend { display: inline-flex; align-items: center; gap: 0.3rem; font-size: 0.62rem; color: #4c5866; white-space: nowrap; flex: none; }
+  .dash-chart-card .cc-swatch { width: 8px; height: 8px; border-radius: 2px; flex: none; }
+  .dash-chart-card svg { width: 100%; height: auto; display: block; overflow: visible; }
+  .dash-chart-card .cc-xaxis { display: flex; justify-content: space-between; margin-top: 0.4rem; }
+  .dash-chart-card .cc-xaxis span { font-size: 0.6rem; color: #9aa2b1; white-space: nowrap; font-variant-numeric: tabular-nums; }
+  .dash-chart-card .cc-xaxis span:first-child { text-align: left; }
+  .dash-chart-card .cc-xaxis span:last-child { text-align: right; }
+
+  @media (max-width: 900px) { .dash-chart-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 620px) { .dash-chart-grid { grid-template-columns: 1fr; } }
+
+  .dash-table-head { display: flex; align-items: baseline; justify-content: space-between; gap: 0.8rem; flex-wrap: wrap; margin-bottom: 0.8rem; }
+  .dash-table-head .titles { display: flex; align-items: baseline; gap: 0.5rem; flex-wrap: wrap; }
+  .dash-table-head .sub { font-size: 0.7rem; color: #9aa2b1; font-weight: 500; text-transform: none; letter-spacing: 0; }
+  .dash-csv-actions { display: flex; gap: 0.5rem; }
+  .dash-csv-btn { font-size: 0.68rem; font-weight: 700; color: #4c5866; border: 1px solid #e6e8ee; border-radius: 6px; padding: 0.32rem 0.7rem; background: #fff; white-space: nowrap; }
+
+  .dash-table-card {
+    background: #fff;
+    border: 1px solid #e6e8ee;
+    border-radius: 12px;
+    padding: 1.1rem 1.2rem;
+    box-shadow: 0 2px 10px rgba(20, 25, 40, 0.05);
+    margin-bottom: 1.1rem;
+  }
+
+  .dash-table-card h4 {
+    margin: 0 0 0.8rem;
+    font-size: 0.76rem;
+    font-weight: 700;
+    color: #1f2330;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .dash-table-wrap { overflow-x: auto; }
+
+  .dash-table { width: 100%; border-collapse: collapse; font-size: 0.78rem; white-space: nowrap; }
+  .dash-table th { text-align: left; font-size: 0.64rem; font-weight: 700; color: #767c8c; text-transform: uppercase; letter-spacing: 0.03em; padding: 0.4rem 0.55rem; border-bottom: 1px solid #e6e8ee; }
+  .dash-table td { padding: 0.55rem 0.55rem; border-bottom: 1px solid #eef0f4; color: #1f2330; font-variant-numeric: tabular-nums; }
+  .dash-table tbody tr { transition: background-color 0.15s ease; }
+  .dash-table tbody tr:hover { background: rgba(72, 104, 224, 0.05); }
+
+  .dash-status { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 20px; font-size: 0.66rem; font-weight: 700; }
+  .dash-status.on { background: #e6f6ef; color: #1fa97f; }
+  .dash-status.off { background: #eef1f8; color: #767c8c; }
+
+  .dash-note { margin: 1.1rem 0 2.75rem; font-size: 0.78rem; color: var(--ink-faint); }
+
+  .dash-features { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.75rem; max-width: 34rem; }
+
+  .dash-feature h4 { margin: 0 0 0.35rem; font-size: 0.92rem; font-weight: 600; }
+
+  .dash-feature p { margin: 0; font-size: 0.86rem; color: var(--ink-soft); }
+
+  @media (max-width: 760px) { .dash-features { grid-template-columns: 1fr; } }
+
+  /* ---------- about / approach ---------- */
+
+  .about-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: clamp(2.5rem, 6vw, 4rem); align-items: start; }
+
+  .about-grid p { color: var(--ink-soft); margin: 0 0 1.1rem; }
+  .about-grid p:last-child { margin-bottom: 0; }
+
+  /* founder seal card */
+
+  .founder-card {
+    display: flex;
+    align-items: center;
+    gap: 1.1rem;
+    padding: 1.1rem 1.3rem;
+    margin-bottom: 1.75rem;
+    border: 1px solid var(--line);
+    background: var(--paper-raised);
+  }
+
+  .seal {
+    flex: none;
+    width: 3.1rem;
+    height: 3.1rem;
+    border-radius: 50%;
+    border: 1.5px solid var(--accent);
+    color: var(--accent-strong);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Hiragino Mincho ProN", "YuMincho", "Yu Mincho", "Noto Serif JP", serif;
+    font-size: 1.15rem;
+    letter-spacing: 0.02em;
+    writing-mode: vertical-rl;
+    transform: rotate(-3deg);
+    background: var(--accent-tint);
+  }
+
+  .founder-card .who { min-width: 0; }
+
+  .founder-card .name { font-size: 0.98rem; font-weight: 600; }
+
+  .founder-card .name .title { font-weight: 400; color: var(--ink-soft); font-size: 0.85rem; margin-left: 0.5rem; }
+
+  .founder-card .note { margin: 0.3rem 0 0; font-size: 0.85rem; color: var(--ink-soft); }
+
+  .approach-list { display: flex; flex-direction: column; gap: 1.6rem; }
+
+  .approach-item { padding-left: 1.1rem; border-left: 2px solid var(--line); transition: border-color 0.25s ease; }
+
+  .approach-item:hover, .approach-item.is-accent { border-left-color: var(--accent); }
+
+  .approach-item h4 { margin: 0 0 0.4rem; font-size: 0.98rem; font-weight: 600; }
+
+  .approach-item p { margin: 0; color: var(--ink-soft); font-size: 0.92rem; }
+
+  @media (max-width: 760px) { .about-grid { grid-template-columns: 1fr; } }
+
+  /* ---------- company table ---------- */
+
+  .company-table { border-top: 1px solid var(--line); }
+
+  .company-row {
+    display: grid;
+    grid-template-columns: minmax(0, 9rem) 1fr;
+    gap: 0.5rem 2rem;
+    padding: 1.15rem 0.5rem;
+    margin: 0 -0.5rem;
+    border-bottom: 1px solid var(--line);
+    font-size: 0.95rem;
+    transition: background-color 0.2s ease;
+  }
+
+  .company-row:hover { background: var(--accent-tint); }
+
+  .company-row dt {
+    color: var(--ink-faint);
+    font-family: ui-monospace, "SF Mono", "Roboto Mono", monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    padding-top: 0.15rem;
+  }
+
+  .company-row dd { margin: 0; color: var(--ink); }
+
+  .company-row .tabular { font-variant-numeric: tabular-nums; font-family: ui-monospace, "SF Mono", "Roboto Mono", monospace; }
+
+  @media (max-width: 560px) { .company-row { grid-template-columns: 1fr; } }
+
+  /* ---------- contact ---------- */
+
+  .contact-section { background: var(--paper-raised); border-top: 1px solid var(--line-soft); }
+
+  .contact-box { display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 2rem; }
+
+  .contact-box .mail { margin-top: 1rem; font-size: 1.05rem; }
+
+  .contact-box .mail a { text-decoration: none; color: var(--accent-strong); border-bottom: 1px solid currentColor; }
+
+  /* ---------- footer ---------- */
+
+  footer {
+    padding: 2.4rem clamp(1.25rem, 4vw, 3rem) 2.8rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    font-size: 0.8rem;
+    color: var(--on-navy-soft);
+    background: var(--navy);
+    border-top: 1px solid var(--line-on-navy);
+  }
+</style>
+</head>
+<body>
+<header>
+  <a class="wordmark" href="#top">
+    <span class="mark">CLARIO</span>
+    <span class="full">株式会社クラリオ</span>
+  </a>
+  <nav>
+    <span class="nav-primary" style="display:flex; align-items:center; gap:inherit;">
+      <a href="#services">事業内容</a>
+      <a href="#flow">支援フロー</a>
+      <a href="#dashboard">ダッシュボード</a>
+      <a href="#about">私たちについて</a>
+      <a href="#company">会社概要</a>
+    </span>
+    <a class="cta-link" href="#contact">お問い合わせ</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="hero-glow" aria-hidden="true">
+      <div class="circle c1"></div>
+      <div class="circle c2"></div>
+      <div class="circle ring"></div>
+    </div>
+    <div class="hero-inner">
+      <span class="eyebrow-row" data-reveal style="transition-delay:0s;"><span class="beacon" aria-hidden="true"></span>RECRUITMENT CONSULTING</span>
+      <h1 class="serif" data-reveal style="transition-delay:0.06s;">採用の迷いに、<br>輪郭を。</h1>
+      <span class="en-line" data-reveal style="transition-delay:0.1s;">Bringing shape to the uncertainty of hiring.</span>
+      <p class="lede" data-reveal style="transition-delay:0.14s;">
+        採用が難しい領域ほど、力を発揮します。<br>
+        戦略設計から運用まで、現場の隣で伴走します。
+      </p>
+      <div class="hero-actions" data-reveal style="transition-delay:0.22s;">
+        <a class="btn btn-primary" href="#contact">お問い合わせ</a>
+        <a class="btn btn-ghost" href="#services">事業内容を見る</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="strip">
+    <div class="col">
+      <span class="tag">POLICY</span>
+      <p>人材紹介は行いません。成功報酬もなし。紹介料に依存しない、プロセス重視のコンサルティングです。</p>
+    </div>
+  </div>
+
+  <section id="services">
+    <div class="col">
+      <div class="section-head" data-reveal>
+        <span class="eyebrow">SERVICES</span>
+        <h2>事業内容</h2>
+        <p>採用活動を4つの角度から支援します。</p>
+      </div>
+      <div class="service-list">
+        <div class="service-row" data-reveal style="transition-delay:0s;">
+          <h3>採用戦略・採用計画の立案支援</h3>
+          <p>人物像と採用数から逆算し、期間・予算・媒体を含めた計画を立てます。</p>
+        </div>
+        <div class="service-row" data-reveal style="transition-delay:0.05s;">
+          <h3>採用プロセス・オペレーションの設計及び改善支援</h3>
+          <p>応募から入社までの流れを見直し、現場で運用しやすい体制に整えます。</p>
+        </div>
+        <div class="service-row" data-reveal style="transition-delay:0.1s;">
+          <h3>採用市場・採用コストの分析及びレポーティング</h3>
+          <p>給与相場や媒体別の費用対効果を可視化し、次の意思決定に使える形で報告します。</p>
+        </div>
+        <div class="service-row" data-reveal style="transition-delay:0.15s;">
+          <h3>人事・採用担当者向けの助言・コンサルティング</h3>
+          <p>求人原稿の磨き込みから面接の見極め方まで、現場の判断に迷う場面で助言します。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="flow">
+    <div class="col">
+      <div class="section-head" data-reveal>
+        <span class="eyebrow">PROCESS</span>
+        <h2>ご支援の流れ</h2>
+        <p>採用活動は、この7つのフェーズを一巡します。検証結果を戦略に戻し、精度を上げていきます。</p>
+      </div>
+      <div class="flow">
+        <div class="flow-step" data-reveal style="transition-delay:0s;">
+          <span class="num">01</span>
+          <h3>ヒアリング・現状分析</h3>
+          <p>採用背景、応募状況、離職状況を棚卸しし、課題を整理します。</p>
+        </div>
+        <div class="flow-step is-core" data-reveal style="transition-delay:0.04s;">
+          <span class="num">02</span>
+          <h3>採用戦略・採用計画の立案</h3>
+          <p>求める人物像、採用チャネル、予算とスケジュールを設計します。</p>
+        </div>
+        <div class="flow-step is-core" data-reveal style="transition-delay:0.08s;">
+          <span class="num">03</span>
+          <h3>求人原稿・訴求設計</h3>
+          <p>媒体ごとに、実態に即した訴求で原稿を作成します。</p>
+        </div>
+        <div class="flow-step is-core" data-reveal style="transition-delay:0.12s;">
+          <span class="num">04</span>
+          <h3>母集団形成・媒体運用</h3>
+          <p>出稿・スカウトを実行し、反応を見ながら日々調整します。</p>
+        </div>
+        <div class="flow-step is-core" data-reveal style="transition-delay:0.16s;">
+          <span class="num">05</span>
+          <h3>選考プロセス支援</h3>
+          <p>選考基準の整備や面接同席など、選考の質を底上げします。</p>
+        </div>
+        <div class="flow-step is-core" data-reveal style="transition-delay:0.2s;">
+          <span class="num">06</span>
+          <h3>内定・入社フォロー</h3>
+          <p>内定辞退の防止や、入社後の受け入れ体制を整えます。</p>
+        </div>
+        <div class="flow-step is-core" data-reveal style="transition-delay:0.24s;">
+          <span class="num">07</span>
+          <h3>効果検証・レポーティング</h3>
+          <p>採用単価や歩留まりを分析し、次の一手につなげます。</p>
+        </div>
+      </div>
+      <div class="flow-loop" data-reveal>
+        <span class="icon" aria-hidden="true">↺</span>
+        <span>07の検証結果を02の採用戦略に反映し、次のサイクルへつなげます。</span>
+      </div>
+      <div class="contract-grid">
+        <div class="contract-card" data-reveal style="transition-delay:0s;">
+          <span class="eyebrow">月額顧問型</span>
+          <p>01〜07を継続的に伴走。通年採用など、腰を据えた運用に適しています。</p>
+        </div>
+        <div class="contract-card" data-reveal style="transition-delay:0.06s;">
+          <span class="eyebrow">スポット型</span>
+          <p>戦略設計や原稿作成など、特定のフェーズだけを単発で支援します。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="dashboard" style="background: var(--paper-raised); border-top: 1px solid var(--line-soft); border-bottom: 1px solid var(--line-soft);">
+    <div class="col">
+      <div class="section-head" data-reveal>
+        <span class="eyebrow">DASHBOARD</span>
+        <h2>ダッシュボードで進捗を可視化</h2>
+        <p>ATS（採用管理システム）からダウンロードできるデータをもとに構築。応募から採用までの数字を、ひとつの画面で確認できます。</p>
+      </div>
+
+      <div class="dash-frame" data-reveal>
+        <div class="dash-frame-bar">
+          <span class="dash-dot" style="background:#e0497a;"></span>
+          <span class="dash-dot" style="background:#e0972b;"></span>
+          <span class="dash-dot" style="background:#1fa97f;"></span>
+          <span class="dash-frame-title">採用ダッシュボード ／ サンプルクライアント</span>
+        </div>
+        <div class="dash-screen">
+
+          <div class="dash-filter-card">
+            <div class="dash-filter-top">
+              <button type="button" class="dash-pill-btn active" onclick="dashSetPeriod(this)">全期間</button>
+              <button type="button" class="dash-pill-btn" onclick="dashSetPeriod(this)">4月</button>
+              <button type="button" class="dash-pill-btn" onclick="dashSetPeriod(this)">5月</button>
+              <button type="button" class="dash-pill-btn" onclick="dashSetPeriod(this)">6月</button>
+              <span class="dash-filter-dates">
+                開始日 <input type="date" class="dash-date-box" value="2026-04-01">
+                終了日 <input type="date" class="dash-date-box" value="2026-05-30">
+              </span>
+            </div>
+            <div class="dash-filter-dropdowns">
+              <input type="text" class="dash-search-input" placeholder="求人タイトルで検索" oninput="dashApplyFilters()" id="dashKeyword">
+              <select class="dash-select" onchange="dashApplyFilters()" id="dashPref">
+                <option value="all">勤務地県：すべて</option>
+                <option value="東京都">東京都</option>
+                <option value="大阪府">大阪府</option>
+              </select>
+              <select class="dash-select" onchange="dashApplyFilters()" id="dashJob">
+                <option value="all">職種：すべて</option>
+                <option value="介護">介護</option>
+                <option value="事務">事務</option>
+                <option value="営業">営業</option>
+                <option value="ドライバー">ドライバー</option>
+              </select>
+              <select class="dash-select" onchange="dashApplyFilters()" id="dashEmp">
+                <option value="all">雇用形態：すべて</option>
+                <option value="正社員">正社員</option>
+                <option value="契約社員">契約社員</option>
+                <option value="パート">パート</option>
+              </select>
+              <select class="dash-select" onchange="dashApplyFilters()" id="dashStatus">
+                <option value="all">求人ステータス：すべて</option>
+                <option value="掲載中">掲載中</option>
+                <option value="未掲載">未掲載</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="dash-kpi-row">
+            <div class="dash-kpi-card" style="--kpi-color:#4868e0;">
+              <div class="k-label">表示回数</div>
+              <div class="k-value" id="kpi-impressions">18,240</div>
+            </div>
+            <div class="dash-kpi-connector"><span class="arrow">→</span><span class="rate" id="kpi-clickRate" style="color:#c07a1f;">7.1%</span><span class="rate-label">クリック率</span></div>
+            <div class="dash-kpi-card" style="--kpi-color:#6366f1;">
+              <div class="k-label">クリック数</div>
+              <div class="k-value" id="kpi-clicks">1,295</div>
+              <div class="k-sub">クリック単価<b id="kpi-cpc">&yen;198</b></div>
+            </div>
+            <div class="dash-kpi-connector"><span class="arrow">→</span><span class="rate" id="kpi-startRate" style="color:#1fa97f;">2.6%</span><span class="rate-label">応募開始率</span></div>
+            <div class="dash-kpi-card" style="--kpi-color:#1fa97f;">
+              <div class="k-label">応募開始数</div>
+              <div class="k-value" id="kpi-appliedStart">34</div>
+              <div class="k-sub">応募開始単価<b id="kpi-cpaStart">&yen;7,540</b></div>
+            </div>
+            <div class="dash-kpi-connector">
+              <span class="arrow">→</span><span class="rate" id="kpi-completeRate" style="color:#1fa97f;">73.5%</span><span class="rate-label">応募完了率</span>
+            </div>
+            <div class="dash-kpi-card" style="--kpi-color:#14b8a6;">
+              <div class="k-label">応募数</div>
+              <div class="k-value" id="kpi-applications">25</div>
+              <div class="k-sub">応募単価<b id="kpi-cpaApply">&yen;10,254</b></div>
+            </div>
+            <div class="dash-kpi-connector"><span class="arrow">+</span></div>
+            <div class="dash-kpi-card" style="--kpi-color:#7b5ce0;">
+              <div class="k-label">利用金額</div>
+              <div class="k-value" id="kpi-spend">&yen;256,350</div>
+            </div>
+          </div>
+
+          <div class="dash-transition"><span class="arrow-down" aria-hidden="true">↓</span> 応募数 <span id="kpi-transitionCount">25</span> 件が選考プロセスへ</div>
+
+          <div class="dash-kpi-row">
+            <div class="dash-kpi-card" style="--kpi-color:#4868e0;">
+              <div class="k-label">書類選考</div>
+              <div class="k-value" id="kpi-docTotal">25</div>
+              <div class="f-breakdown">
+                <span class="f-pill progress">進行中 <span id="pill-doc-inprogress">2</span></span>
+                <span class="f-pill pass">通過 <span id="pill-doc-pass">11</span></span>
+                <span class="f-pill reject">不合格 <span id="pill-doc-reject">9</span></span>
+                <span class="f-pill withdraw">辞退 <span id="pill-doc-withdraw">3</span></span>
+              </div>
+            </div>
+            <div class="dash-kpi-connector"><span class="arrow">→</span><span class="rate" id="kpi-docPassRate" style="color:#4868e0;">44.0%</span><span class="rate-label">書類選考通過率</span></div>
+            <div class="dash-kpi-card" style="--kpi-color:#6366f1;">
+              <div class="k-label">面接</div>
+              <div class="k-value" id="kpi-interviewTotal">11</div>
+              <div class="f-breakdown">
+                <span class="f-pill progress">進行中 <span id="pill-interview-inprogress">1</span></span>
+                <span class="f-pill pass">通過 <span id="pill-interview-pass">6</span></span>
+                <span class="f-pill reject">不合格 <span id="pill-interview-reject">3</span></span>
+                <span class="f-pill withdraw">辞退 <span id="pill-interview-withdraw">1</span></span>
+              </div>
+            </div>
+            <div class="dash-kpi-connector"><span class="arrow">→</span><span class="rate" id="kpi-interviewPassRate" style="color:#1fa97f;">54.5%</span><span class="rate-label">面接通過率</span></div>
+            <div class="dash-kpi-card" style="--kpi-color:#14b8a6;">
+              <div class="k-label">内定</div>
+              <div class="k-value" id="kpi-offerTotal">6</div>
+              <div class="f-breakdown">
+                <span class="f-pill progress">進行中 <span id="pill-offer-inprogress">1</span></span>
+                <span class="f-pill pass">通過 <span id="pill-offer-pass">4</span></span>
+                <span class="f-pill withdraw">辞退 <span id="pill-offer-withdraw">1</span></span>
+              </div>
+            </div>
+            <div class="dash-kpi-connector"><span class="arrow">→</span><span class="rate" id="kpi-offerPassRate" style="color:#1fa97f;">66.7%</span><span class="rate-label">内定承諾率</span></div>
+            <div class="dash-kpi-card" style="--kpi-color:#1fa97f;">
+              <div class="k-label">採用</div>
+              <div class="k-value" id="kpi-hired">4</div>
+            </div>
+            <div class="dash-kpi-connector"><span class="arrow">=</span></div>
+            <div class="dash-kpi-card" style="--kpi-color:#7b5ce0;">
+              <div class="k-label">採用単価</div>
+              <div class="k-value" id="kpi-cpaHire">&yen;64,088</div>
+            </div>
+          </div>
+
+          <p class="dash-footnote">
+            ※広告データの応募数には含まれない、採用HP経由の応募も含む。<br>
+            ※データ反映のラグの関係で、応募数と一致しない場合あり。
+          </p>
+
+          <div class="dash-table-card">
+            <div class="dash-table-head">
+              <div class="titles">
+                <h4>求人別サマリー</h4>
+                <span class="sub">全求人を表示中・行をクリックすると絞り込めます</span>
+              </div>
+              <div class="dash-csv-actions">
+                <span class="dash-csv-btn">求人別 CSV</span>
+                <span class="dash-csv-btn">日次 CSV</span>
+              </div>
+            </div>
+            <div class="dash-table-wrap">
+              <table class="dash-table">
+                <thead><tr><th>勤務地県</th><th>勤務地名</th><th>職種</th><th>雇用形態</th><th>最新ステータス</th><th>求人タイトル</th><th>応募数</th><th>応募単価</th><th>利用金額</th><th>表示回数</th><th>クリック率</th></tr></thead>
+                <tbody id="dashJobTableBody">
+                  <tr data-pref="東京都" data-job="介護" data-emp="正社員" data-status="掲載中" data-title="介護スタッフ（正社員）"><td>東京都</td><td>サンプル拠点A</td><td>介護</td><td>正社員</td><td><span class="dash-status on">掲載中</span></td><td>介護スタッフ（正社員）</td><td>11</td><td>&yen;9,182</td><td>&yen;101,000</td><td>7,200</td><td>8.5%</td></tr>
+                  <tr data-pref="東京都" data-job="事務" data-emp="契約社員" data-status="未掲載" data-title="一般事務スタッフ（未経験可）"><td>東京都</td><td>サンプル拠点A</td><td>事務</td><td>契約社員</td><td><span class="dash-status off">未掲載</span></td><td>一般事務スタッフ（未経験可）</td><td>6</td><td>&yen;9,667</td><td>&yen;58,000</td><td>4,300</td><td>7.1%</td></tr>
+                  <tr data-pref="大阪府" data-job="営業" data-emp="正社員" data-status="掲載中" data-title="法人営業（未経験可）"><td>大阪府</td><td>サンプル拠点B</td><td>営業</td><td>正社員</td><td><span class="dash-status on">掲載中</span></td><td>法人営業（未経験可）</td><td>5</td><td>&yen;14,200</td><td>&yen;71,000</td><td>4,900</td><td>5.7%</td></tr>
+                  <tr data-pref="大阪府" data-job="ドライバー" data-emp="パート" data-status="未掲載" data-title="送迎ドライバー（パート）"><td>大阪府</td><td>サンプル拠点B</td><td>ドライバー</td><td>パート</td><td><span class="dash-status off">未掲載</span></td><td>送迎ドライバー（パート）</td><td>3</td><td>&yen;8,783</td><td>&yen;26,350</td><td>1,840</td><td>5.4%</td></tr>
+                  <tr id="dashJobEmptyRow" style="display:none;"><td colspan="11" style="text-align:center; color:#9aa2b1; padding:1.4rem 0;">条件に一致する求人がありません</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="dash-table-card">
+            <div class="dash-table-head">
+              <div class="titles">
+                <h4>応募者ビュー</h4>
+              </div>
+              <div class="dash-csv-actions">
+                <span class="dash-csv-btn">応募者 CSV</span>
+              </div>
+            </div>
+            <div class="dash-table-wrap">
+              <table class="dash-table">
+                <thead><tr><th>応募日時</th><th>応募者名</th><th>性別</th><th>年齢</th><th>対応状況</th><th>職種名</th><th>応募勤務地</th><th>応募雇用形態</th></tr></thead>
+                <tbody>
+                  <tr><td>05/20 10:12</td><td>佐藤 陽子</td><td>女性</td><td>34</td><td><span class="f-pill progress">書類選考中</span></td><td>介護スタッフ</td><td>サンプル拠点A</td><td>正社員</td></tr>
+                  <tr><td>05/18 15:44</td><td>高橋 直樹</td><td>男性</td><td>41</td><td><span class="f-pill pass">内定通知</span></td><td>法人営業</td><td>サンプル拠点B</td><td>正社員</td></tr>
+                  <tr><td>05/16 09:03</td><td>田中 美咲</td><td>女性</td><td>27</td><td><span class="f-pill progress">面接日確定</span></td><td>一般事務スタッフ</td><td>サンプル拠点A</td><td>契約社員</td></tr>
+                  <tr><td>05/14 20:21</td><td>山本 拓也</td><td>男性</td><td>22</td><td><span class="f-pill reject">書類不合格</span></td><td>送迎ドライバー</td><td>サンプル拠点B</td><td>パート</td></tr>
+                  <tr><td>05/10 13:37</td><td>中村 さくら</td><td>女性</td><td>39</td><td><span class="f-pill pass">採用</span></td><td>介護スタッフ</td><td>サンプル拠点A</td><td>正社員</td></tr>
+                  <tr><td>05/08 18:05</td><td>小林 健一</td><td>男性</td><td>55</td><td><span class="f-pill withdraw">選考前辞退</span></td><td>法人営業</td><td>サンプル拠点B</td><td>正社員</td></tr>
+                  <tr><td>05/02 11:50</td><td>伊藤 花</td><td>女性</td><td>30</td><td><span class="f-pill reject">面接不合格</span></td><td>一般事務スタッフ</td><td>サンプル拠点A</td><td>契約社員</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="dash-chart-toolbar">
+            <span class="ct-label">グラフ集計単位</span>
+            <span class="dash-seg">
+              <span class="active" onclick="dashSetGranularity(this)">日次</span>
+              <span onclick="dashSetGranularity(this)">週次</span>
+              <span onclick="dashSetGranularity(this)">月次</span>
+            </span>
+          </div>
+
+          <div class="dash-chart-grid">
+
+            <div class="dash-chart-card">
+              <div class="cc-head">
+                <span class="cc-title">表示回数　合計 <b id="chart-impressions-title">18,240</b></span>
+                <span class="cc-legend"><span class="cc-swatch" style="background:#4868e0;"></span>表示回数</span>
+              </div>
+              <svg id="chart-impressions" viewBox="0 0 300 100" preserveAspectRatio="none" aria-hidden="true">
+                <line x1="0" y1="14" x2="300" y2="14" stroke="#eef0f4" stroke-width="1"/>
+                <line x1="0" y1="94" x2="300" y2="94" stroke="#eef0f4" stroke-width="1"/>
+                <polyline points="4,73.2 36.4,74.8 68.9,69.6 101.3,78.4 133.8,18 166.2,76.8 198.7,80.4 231.1,78.8 263.6,75.6 296,69.2" fill="none" stroke="#4868e0" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <div class="cc-xaxis">
+                <span>04/01</span><span>04/25</span><span>05/21</span>
+              </div>
+            </div>
+
+            <div class="dash-chart-card">
+              <div class="cc-head">
+                <span class="cc-title">クリック数　合計 <b id="chart-clicks-title">1,295</b></span>
+                <span class="cc-legend"><span class="cc-swatch" style="background:#e0972b;"></span>クリック数</span>
+              </div>
+              <svg id="chart-clicks" viewBox="0 0 300 100" preserveAspectRatio="none" aria-hidden="true">
+                <line x1="0" y1="14" x2="300" y2="14" stroke="#eef0f4" stroke-width="1"/>
+                <line x1="0" y1="94" x2="300" y2="94" stroke="#eef0f4" stroke-width="1"/>
+                <polyline points="4,31.1 36.4,46 68.9,27.7 101.3,54 133.8,25.4 166.2,65.4 198.7,59.7 231.1,62 263.6,54 296,39.1" fill="none" stroke="#e0972b" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <div class="cc-xaxis">
+                <span>04/01</span><span>04/25</span><span>05/21</span>
+              </div>
+            </div>
+
+            <div class="dash-chart-card">
+              <div class="cc-head">
+                <span class="cc-title">応募開始数　合計 <b id="chart-appliedStart-title">34</b></span>
+                <span class="cc-legend"><span class="cc-swatch" style="background:#14b8a6;"></span>応募開始数</span>
+              </div>
+              <svg id="chart-appliedStart" viewBox="0 0 300 100" preserveAspectRatio="none" aria-hidden="true">
+                <line x1="0" y1="14" x2="300" y2="14" stroke="#eef0f4" stroke-width="1"/>
+                <line x1="0" y1="94" x2="300" y2="94" stroke="#eef0f4" stroke-width="1"/>
+                <polyline points="4,54 36.4,94 68.9,14 101.3,54 133.8,94 166.2,14 198.7,54 231.1,94 263.6,54 296,14" fill="none" stroke="#14b8a6" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <div class="cc-xaxis">
+                <span>04/01</span><span>04/25</span><span>05/21</span>
+              </div>
+            </div>
+
+            <div class="dash-chart-card">
+              <div class="cc-head">
+                <span class="cc-title">応募数　合計 <b id="chart-applications-title">25</b></span>
+                <span class="cc-legend"><span class="cc-swatch" style="background:#e0497a;"></span>応募数</span>
+              </div>
+              <svg id="chart-applications" viewBox="0 0 300 100" preserveAspectRatio="none" aria-hidden="true">
+                <line x1="0" y1="14" x2="300" y2="14" stroke="#eef0f4" stroke-width="1"/>
+                <line x1="0" y1="94" x2="300" y2="94" stroke="#eef0f4" stroke-width="1"/>
+                <polyline points="4,94 36.4,54 68.9,54 101.3,94 133.8,14 166.2,94 198.7,54 231.1,14 263.6,94 296,54" fill="none" stroke="#e0497a" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <div class="cc-xaxis">
+                <span>04/01</span><span>04/25</span><span>05/21</span>
+              </div>
+            </div>
+
+            <div class="dash-chart-card">
+              <div class="cc-head">
+                <span class="cc-title">利用金額　合計 <b id="chart-spend-title">&yen;256,350</b></span>
+                <span class="cc-legend"><span class="cc-swatch" style="background:#7b5ce0;"></span>利用金額</span>
+              </div>
+              <svg id="chart-spend" viewBox="0 0 300 100" preserveAspectRatio="none" aria-hidden="true">
+                <line x1="0" y1="14" x2="300" y2="14" stroke="#eef0f4" stroke-width="1"/>
+                <line x1="0" y1="94" x2="300" y2="94" stroke="#eef0f4" stroke-width="1"/>
+                <rect x="-3" y="27.3" width="14" height="66.7" fill="#7b5ce0"/>
+                <rect x="29.4" y="40.7" width="14" height="53.3" fill="#7b5ce0"/>
+                <rect x="61.9" y="54" width="14" height="40" fill="#7b5ce0"/>
+                <rect x="94.3" y="62.9" width="14" height="31.1" fill="#7b5ce0"/>
+                <rect x="126.8" y="71.8" width="14" height="22.2" fill="#7b5ce0"/>
+                <rect x="159.2" y="78.4" width="14" height="15.6" fill="#7b5ce0"/>
+                <rect x="191.7" y="82.9" width="14" height="11.1" fill="#7b5ce0"/>
+                <rect x="224.1" y="67.3" width="14" height="26.7" fill="#7b5ce0"/>
+                <rect x="256.6" y="49.6" width="14" height="44.4" fill="#7b5ce0"/>
+                <rect x="289" y="36.2" width="14" height="57.8" fill="#7b5ce0"/>
+              </svg>
+              <div class="cc-xaxis">
+                <span>04/01</span><span>04/25</span><span>05/21</span>
+              </div>
+            </div>
+
+            <div class="dash-chart-card">
+              <div class="cc-head">
+                <span class="cc-title">クリック率　全体 <b id="chart-clickRate-title">7.1%</b></span>
+                <span class="cc-legend"><span class="cc-swatch" style="background:#e0972b;"></span>クリック率 (%)</span>
+              </div>
+              <svg id="chart-clickRate" viewBox="0 0 300 100" preserveAspectRatio="none" aria-hidden="true">
+                <line x1="0" y1="14" x2="300" y2="14" stroke="#eef0f4" stroke-width="1"/>
+                <line x1="0" y1="94" x2="300" y2="94" stroke="#eef0f4" stroke-width="1"/>
+                <polyline points="4,72.7 36.4,78 68.9,70 101.3,80.7 133.8,67.3 166.2,78 198.7,83.3 231.1,72.7 263.6,70 296,19.3" fill="none" stroke="#e0972b" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <div class="cc-xaxis">
+                <span>04/01</span><span>04/25</span><span>05/21</span>
+              </div>
+            </div>
+
+            <div class="dash-chart-card">
+              <div class="cc-head">
+                <span class="cc-title">応募開始率　全体 <b id="chart-startRate-title">2.6%</b></span>
+                <span class="cc-legend"><span class="cc-swatch" style="background:#1fa97f;"></span>応募開始率 (%)</span>
+              </div>
+              <svg id="chart-startRate" viewBox="0 0 300 100" preserveAspectRatio="none" aria-hidden="true">
+                <line x1="0" y1="14" x2="300" y2="14" stroke="#eef0f4" stroke-width="1"/>
+                <line x1="0" y1="94" x2="300" y2="94" stroke="#eef0f4" stroke-width="1"/>
+                <polyline points="4,86 36.4,38 68.9,94 101.3,22 133.8,78 166.2,46 198.7,94 231.1,30 263.6,70 296,54" fill="none" stroke="#1fa97f" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <div class="cc-xaxis">
+                <span>04/01</span><span>04/25</span><span>05/21</span>
+              </div>
+            </div>
+
+            <div class="dash-chart-card">
+              <div class="cc-head">
+                <span class="cc-title">応募率　全体 <b id="chart-applyRate-title">1.9%</b></span>
+                <span class="cc-legend"><span class="cc-swatch" style="background:#14b8a6;"></span>応募率 (%)</span>
+              </div>
+              <svg id="chart-applyRate" viewBox="0 0 300 100" preserveAspectRatio="none" aria-hidden="true">
+                <line x1="0" y1="14" x2="300" y2="14" stroke="#eef0f4" stroke-width="1"/>
+                <line x1="0" y1="94" x2="300" y2="94" stroke="#eef0f4" stroke-width="1"/>
+                <polyline points="4,87.3 36.4,40.7 68.9,94 101.3,20.7 133.8,80.7 166.2,47.3 198.7,94 231.1,34 263.6,74 296,54" fill="none" stroke="#14b8a6" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <div class="cc-xaxis">
+                <span>04/01</span><span>04/25</span><span>05/21</span>
+              </div>
+            </div>
+
+            <div class="dash-chart-card">
+              <div class="cc-head">
+                <span class="cc-title">クリック単価　全体 <b id="chart-cpc-title">&yen;198</b></span>
+                <span class="cc-legend"><span class="cc-swatch" style="background:#6366f1;"></span>クリック単価 (&yen;)</span>
+              </div>
+              <svg id="chart-cpc" viewBox="0 0 300 100" preserveAspectRatio="none" aria-hidden="true">
+                <line x1="0" y1="14" x2="300" y2="14" stroke="#eef0f4" stroke-width="1"/>
+                <line x1="0" y1="94" x2="300" y2="94" stroke="#eef0f4" stroke-width="1"/>
+                <polyline points="4,67.3 36.4,70 68.9,14 101.3,74 133.8,64.7 166.2,68.7 198.7,72.7 231.1,60.7 263.6,54 296,67.6" fill="none" stroke="#6366f1" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <div class="cc-xaxis">
+                <span>04/01</span><span>04/25</span><span>05/21</span>
+              </div>
+            </div>
+
+            <div class="dash-chart-card">
+              <div class="cc-head">
+                <span class="cc-title">応募開始単価　全体 <b id="chart-cpaStart-title">&yen;7,540</b></span>
+                <span class="cc-legend"><span class="cc-swatch" style="background:#1fa97f;"></span>応募開始単価 (&yen;)</span>
+              </div>
+              <svg id="chart-cpaStart" viewBox="0 0 300 100" preserveAspectRatio="none" aria-hidden="true">
+                <line x1="0" y1="14" x2="300" y2="14" stroke="#eef0f4" stroke-width="1"/>
+                <line x1="0" y1="94" x2="300" y2="94" stroke="#eef0f4" stroke-width="1"/>
+                <polyline points="4,40.7 36.4,27.3 68.9,67.3 101.3,74 133.8,79.8 166.2,76.2 198.7,82.9 231.1,62.9 263.6,56.2 296,60.5" fill="none" stroke="#1fa97f" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <div class="cc-xaxis">
+                <span>04/01</span><span>04/25</span><span>05/21</span>
+              </div>
+            </div>
+
+            <div class="dash-chart-card">
+              <div class="cc-head">
+                <span class="cc-title">応募単価　全体 <b id="chart-cpaApply-title">&yen;10,254</b></span>
+                <span class="cc-legend"><span class="cc-swatch" style="background:#14b8a6;"></span>応募単価 (&yen;)</span>
+              </div>
+              <svg id="chart-cpaApply" viewBox="0 0 300 100" preserveAspectRatio="none" aria-hidden="true">
+                <line x1="0" y1="14" x2="300" y2="14" stroke="#eef0f4" stroke-width="1"/>
+                <line x1="0" y1="94" x2="300" y2="94" stroke="#eef0f4" stroke-width="1"/>
+                <polyline points="4,36.2 36.4,18.4 68.9,58.4 101.3,65.1 133.8,78.4 166.2,84.2 198.7,75.3 231.1,87.3 263.6,54 296,48.4" fill="none" stroke="#14b8a6" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <div class="cc-xaxis">
+                <span>04/01</span><span>04/25</span><span>05/21</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+      <p class="dash-note">※ATSからダウンロードできるデータを基にしたダミーデータのサンプルです。表示項目・氏名等は実物と一部異なります。</p>
+
+      <div class="dash-features">
+        <div class="dash-feature" data-reveal style="transition-delay:0s;">
+          <h4>データを自動集計</h4>
+          <p>ATSからダウンロードしたデータを、指標ごとに自動で集計します。</p>
+        </div>
+        <div class="dash-feature" data-reveal style="transition-delay:0.06s;">
+          <h4>進捗の可視化</h4>
+          <p>応募から内定までの歩留まりを、ファネルで確認できます。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="col">
+      <div class="section-head" data-reveal>
+        <span class="eyebrow">ABOUT</span>
+        <h2>私たちについて</h2>
+      </div>
+      <div class="about-grid">
+        <div data-reveal>
+          <div class="founder-card">
+            <span class="seal" aria-hidden="true">黒野</span>
+            <div class="who">
+              <p class="name">黒野 克仁<span class="title">代表取締役</span></p>
+              <p class="note">個人事業主として培った実務を、法人としてより複雑な採用課題に。</p>
+            </div>
+          </div>
+          <p>株式会社クラリオは2025年12月、黒野克仁が設立しました。個人事業主時代からの実績を引き継ぎ、法人としてより複雑な採用課題に取り組んでいます。</p>
+          <p>採用の難しさは、業種そのものよりも「現場ごとの事情」に起因することがほとんどです。地域や職種によって、有効な採用手法は大きく異なります。画一的な手法は通用しません。</p>
+          <p>採用の現場に一つずつ向き合います。媒体選定から日々の応募対応まで、実務レベルで伴走します。</p>
+        </div>
+        <div class="approach-list">
+          <div class="approach-item is-accent" data-reveal style="transition-delay:0s;">
+            <h4>主要求人媒体の実務知見</h4>
+            <p>Airワーク、Indeed Plusなど、複数媒体の特性を踏まえて運用します。</p>
+          </div>
+          <div class="approach-item" data-reveal style="transition-delay:0.08s;">
+            <h4>現場に近い距離感での伴走</h4>
+            <p>資料を渡して終わりにしません。原稿修正や日々のやり取りにも実務者として関わります。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="company" style="background: var(--paper-raised); border-top: 1px solid var(--line-soft); border-bottom: 1px solid var(--line-soft);">
+    <div class="col">
+      <div class="section-head" data-reveal>
+        <span class="eyebrow">COMPANY</span>
+        <h2>会社概要</h2>
+      </div>
+      <dl class="company-table" data-reveal>
+        <div class="company-row">
+          <dt>会社名</dt>
+          <dd>株式会社クラリオ</dd>
+        </div>
+        <div class="company-row">
+          <dt>設立</dt>
+          <dd class="tabular">2025年12月22日</dd>
+        </div>
+        <div class="company-row">
+          <dt>代表者</dt>
+          <dd>代表取締役　黒野 克仁</dd>
+        </div>
+        <div class="company-row">
+          <dt>所在地</dt>
+          <dd>東京都練馬区高野台3-24-1</dd>
+        </div>
+        <div class="company-row">
+          <dt>事業内容</dt>
+          <dd>採用戦略コンサルティング、採用プロセス設計・改善支援、採用市場・採用コスト分析、人事・採用担当者向けアドバイザリー</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <section id="contact" class="contact-section">
+    <div class="col contact-box" data-reveal>
+      <div>
+        <span class="eyebrow">CONTACT</span>
+        <h2 class="serif" style="font-size: clamp(1.5rem, 3vw, 1.9rem); font-weight: 600;">採用に関するご相談は、<br>お気軽にご連絡ください。</h2>
+        <p class="mono"><a href="mailto:kurono.katsuhito@clario.co.jp">kurono.katsuhito@clario.co.jp</a></p>
+      </div>
+      <a class="btn btn-primary" href="mailto:kurono.katsuhito@clario.co.jp">メールで問い合わせる</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <span>© 2026 Clario Inc.</span>
+  <span>株式会社クラリオ｜東京都練馬区高野台3-24-1</span>
+</footer>
+
+<script>
+(function () {
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function whenVisible(list, cb, opts) {
+    if (!list.length) return;
+    if (reduced || !('IntersectionObserver' in window)) {
+      list.forEach(cb);
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          cb(entry.target);
+          io.unobserve(entry.target);
+        }
+      });
+    }, opts || { threshold: 0.2, rootMargin: '0px 0px -6% 0px' });
+    list.forEach(function (el) { io.observe(el); });
+  }
+
+  whenVisible(Array.prototype.slice.call(document.querySelectorAll('[data-reveal]')), function (el) {
+    el.classList.add('is-visible');
+  });
+})();
+
+function dashSetPeriod(btn) {
+  var group = btn.parentElement.querySelectorAll('.dash-pill-btn');
+  for (var i = 0; i < group.length; i++) group[i].classList.remove('active');
+  btn.classList.add('active');
+}
+
+(function () {
+  var JOBS = [
+    { pref: '東京都', job: '介護', emp: '正社員', status: '掲載中', title: '介護スタッフ（正社員）',
+      impressions: 7200, clicks: 612, appliedStart: 18, applications: 11, spend: 101000,
+      doc: { total: 12, inprogress: 1, pass: 6, reject: 4, withdraw: 1 },
+      interview: { total: 6, inprogress: 1, pass: 4, reject: 1, withdraw: 0 },
+      offer: { total: 4, inprogress: 1, pass: 3, withdraw: 0 },
+      hired: 3 },
+    { pref: '東京都', job: '事務', emp: '契約社員', status: '未掲載', title: '一般事務スタッフ（未経験可）',
+      impressions: 4300, clicks: 305, appliedStart: 9, applications: 6, spend: 58000,
+      doc: { total: 8, inprogress: 1, pass: 3, reject: 3, withdraw: 1 },
+      interview: { total: 3, inprogress: 0, pass: 1, reject: 1, withdraw: 1 },
+      offer: { total: 1, inprogress: 0, pass: 1, withdraw: 0 },
+      hired: 1 },
+    { pref: '大阪府', job: '営業', emp: '正社員', status: '掲載中', title: '法人営業（未経験可）',
+      impressions: 4900, clicks: 279, appliedStart: 5, applications: 5, spend: 71000,
+      doc: { total: 3, inprogress: 0, pass: 1, reject: 1, withdraw: 1 },
+      interview: { total: 1, inprogress: 0, pass: 1, reject: 0, withdraw: 0 },
+      offer: { total: 1, inprogress: 0, pass: 0, withdraw: 1 },
+      hired: 0 },
+    { pref: '大阪府', job: 'ドライバー', emp: 'パート', status: '未掲載', title: '送迎ドライバー（パート）',
+      impressions: 1840, clicks: 99, appliedStart: 2, applications: 3, spend: 26350,
+      doc: { total: 2, inprogress: 0, pass: 1, reject: 1, withdraw: 0 },
+      interview: { total: 1, inprogress: 0, pass: 0, reject: 1, withdraw: 0 },
+      offer: { total: 0, inprogress: 0, pass: 0, withdraw: 0 },
+      hired: 0 }
+  ];
+
+  var CHARTS = {
+    impressions:  { raw: [520, 480, 610, 390, 1900, 430, 340, 380, 460, 620], yMax: 2000, kind: 'line', color: '#4868e0', sumType: true, format: 'int' },
+    clicks:       { raw: [55, 42, 58, 35, 60, 25, 30, 28, 35, 48], yMax: 70, kind: 'line', color: '#e0972b', sumType: true, format: 'int' },
+    appliedStart: { raw: [1, 0, 2, 1, 0, 2, 1, 0, 1, 2], yMax: 2, kind: 'line', color: '#14b8a6', sumType: true, format: 'int' },
+    applications: { raw: [0, 1, 1, 0, 2, 0, 1, 2, 0, 1], yMax: 2, kind: 'line', color: '#e0497a', sumType: true, format: 'int' },
+    spend:        { raw: [15000, 12000, 9000, 7000, 5000, 3500, 2500, 6000, 10000, 13000], yMax: 18000, kind: 'bar', color: '#7b5ce0', sumType: true, format: 'yen' },
+    clickRate:    { raw: [8, 6, 9, 5, 10, 6, 4, 8, 9, 28], yMax: 30, kind: 'line', color: '#e0972b', sumType: false, format: 'pct1' },
+    startRate:    { raw: [1, 7, 0, 9, 2, 6, 0, 8, 3, 5], yMax: 10, kind: 'line', color: '#1fa97f', sumType: false, format: 'pct1' },
+    applyRate:    { raw: [0.5, 4, 0, 5.5, 1, 3.5, 0, 4.5, 1.5, 3], yMax: 6, kind: 'line', color: '#14b8a6', sumType: false, format: 'pct1' },
+    cpc:          { raw: [200, 180, 600, 150, 220, 190, 160, 250, 300, 198], yMax: 600, kind: 'line', color: '#6366f1', sumType: false, format: 'yen' },
+    cpaStart:     { raw: [12000, 15000, 6000, 4500, 3200, 4000, 2500, 7000, 8500, 7540], yMax: 18000, kind: 'line', color: '#1fa97f', sumType: false, format: 'yen' },
+    cpaApply:     { raw: [13000, 17000, 8000, 6500, 3500, 2200, 4200, 1500, 9000, 10254], yMax: 18000, kind: 'line', color: '#14b8a6', sumType: false, format: 'yen' }
+  };
+
+  var GROUPS = {
+    day: null,
+    week: [[0, 1], [2, 3], [4, 5], [6, 7], [8, 9]],
+    month: [[0, 1, 2, 3, 4], [5, 6, 7, 8, 9]]
+  };
+
+  var granularity = 'day';
+  var BASE = computeAggregate(JOBS);
+
+  function computeAggregate(jobs) {
+    var a = {
+      impressions: 0, clicks: 0, appliedStart: 0, applications: 0, spend: 0,
+      doc: { total: 0, inprogress: 0, pass: 0, reject: 0, withdraw: 0 },
+      interview: { total: 0, inprogress: 0, pass: 0, reject: 0, withdraw: 0 },
+      offer: { total: 0, inprogress: 0, pass: 0, withdraw: 0 },
+      hired: 0
+    };
+    jobs.forEach(function (j) {
+      a.impressions += j.impressions;
+      a.clicks += j.clicks;
+      a.appliedStart += j.appliedStart;
+      a.applications += j.applications;
+      a.spend += j.spend;
+      Object.keys(a.doc).forEach(function (k) { a.doc[k] += j.doc[k] || 0; });
+      Object.keys(a.interview).forEach(function (k) { a.interview[k] += j.interview[k] || 0; });
+      Object.keys(a.offer).forEach(function (k) { a.offer[k] += j.offer[k] || 0; });
+      a.hired += j.hired;
+    });
+    a.clickRate = a.impressions ? a.clicks / a.impressions * 100 : 0;
+    a.startRate = a.clicks ? a.appliedStart / a.clicks * 100 : 0;
+    a.applyRate = a.clicks ? a.applications / a.clicks * 100 : 0;
+    a.completeRate = a.appliedStart ? a.applications / a.appliedStart * 100 : 0;
+    a.cpc = a.clicks ? a.spend / a.clicks : 0;
+    a.cpaStart = a.appliedStart ? a.spend / a.appliedStart : 0;
+    a.cpaApply = a.applications ? a.spend / a.applications : 0;
+    a.docPassRate = a.doc.total ? a.doc.pass / a.doc.total * 100 : 0;
+    a.interviewPassRate = a.interview.total ? a.interview.pass / a.interview.total * 100 : 0;
+    a.offerPassRate = a.offer.total ? a.offer.pass / a.offer.total * 100 : 0;
+    a.cpaHire = a.hired ? a.spend / a.hired : 0;
+    return a;
+  }
+
+  function fmt(v, kind) {
+    if (kind === 'int') return Math.round(v).toLocaleString('ja-JP');
+    if (kind === 'yen') return '¥' + Math.round(v).toLocaleString('ja-JP');
+    if (kind === 'pct1') return v.toFixed(1) + '%';
+    return String(v);
+  }
+
+  function setText(id, text) {
+    var el = document.getElementById(id);
+    if (el) el.textContent = text;
+  }
+
+  function getFilters() {
+    var kw = document.getElementById('dashKeyword');
+    return {
+      pref: document.getElementById('dashPref').value,
+      job: document.getElementById('dashJob').value,
+      emp: document.getElementById('dashEmp').value,
+      status: document.getElementById('dashStatus').value,
+      keyword: (kw && kw.value || '').trim().toLowerCase()
+    };
+  }
+
+  function filterJobs(f) {
+    return JOBS.filter(function (j) {
+      return (f.pref === 'all' || j.pref === f.pref) &&
+        (f.job === 'all' || j.job === f.job) &&
+        (f.emp === 'all' || j.emp === f.emp) &&
+        (f.status === 'all' || j.status === f.status) &&
+        (!f.keyword || j.title.toLowerCase().indexOf(f.keyword) !== -1);
+    });
+  }
+
+  function renderChart(key, ratio) {
+    var cfg = CHARTS[key];
+    var svg = document.getElementById('chart-' + key);
+    if (!svg || !cfg) return;
+
+    var groups = GROUPS[granularity];
+    var baseValues = !groups ? cfg.raw.slice() : groups.map(function (idxs) {
+      var sum = idxs.reduce(function (s, i) { return s + cfg.raw[i]; }, 0);
+      return cfg.sumType ? sum : sum / idxs.length;
+    });
+    var values = baseValues.map(function (v) { return v * ratio; });
+
+    var n = values.length;
+    var x0 = 4, x1 = 296;
+    var xs = values.map(function (_, i) { return n === 1 ? x0 : x0 + (i * (x1 - x0)) / (n - 1); });
+
+    var html = '<line x1="0" y1="14" x2="300" y2="14" stroke="#eef0f4" stroke-width="1"/>' +
+      '<line x1="0" y1="94" x2="300" y2="94" stroke="#eef0f4" stroke-width="1"/>';
+
+    if (cfg.kind === 'bar') {
+      var bw = n <= 2 ? 44 : (292 / n) * 0.55;
+      values.forEach(function (v, i) {
+        var h = Math.max(0, Math.min(1, v / cfg.yMax)) * 80;
+        var y = 94 - h;
+        html += '<rect x="' + (xs[i] - bw / 2).toFixed(1) + '" y="' + y.toFixed(1) + '" width="' + bw.toFixed(1) + '" height="' + h.toFixed(1) + '" fill="' + cfg.color + '"/>';
+      });
+    } else {
+      var pts = values.map(function (v, i) {
+        var y = 94 - Math.max(0, Math.min(1, v / cfg.yMax)) * 80;
+        return xs[i].toFixed(1) + ',' + y.toFixed(1);
+      });
+      html += '<polyline points="' + pts.join(' ') + '" fill="none" stroke="' + cfg.color + '" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>';
+    }
+    svg.innerHTML = html;
+  }
+
+  function dashApplyFilters() {
+    var f = getFilters();
+    var jobs = filterJobs(f);
+
+    var rows = document.querySelectorAll('#dashJobTableBody tr[data-title]');
+    var visibleCount = 0;
+    rows.forEach(function (tr) {
+      var matches =
+        (f.pref === 'all' || tr.dataset.pref === f.pref) &&
+        (f.job === 'all' || tr.dataset.job === f.job) &&
+        (f.emp === 'all' || tr.dataset.emp === f.emp) &&
+        (f.status === 'all' || tr.dataset.status === f.status) &&
+        (!f.keyword || tr.dataset.title.toLowerCase().indexOf(f.keyword) !== -1);
+      tr.style.display = matches ? '' : 'none';
+      if (matches) visibleCount++;
+    });
+    var emptyRow = document.getElementById('dashJobEmptyRow');
+    if (emptyRow) emptyRow.style.display = visibleCount === 0 ? '' : 'none';
+
+    var a = computeAggregate(jobs);
+
+    setText('kpi-impressions', fmt(a.impressions, 'int'));
+    setText('kpi-clickRate', a.clickRate.toFixed(1) + '%');
+    setText('kpi-clicks', fmt(a.clicks, 'int'));
+    setText('kpi-cpc', fmt(a.cpc, 'yen'));
+    setText('kpi-startRate', a.startRate.toFixed(1) + '%');
+    setText('kpi-appliedStart', fmt(a.appliedStart, 'int'));
+    setText('kpi-cpaStart', fmt(a.cpaStart, 'yen'));
+    setText('kpi-completeRate', a.completeRate.toFixed(1) + '%');
+    setText('kpi-applications', fmt(a.applications, 'int'));
+    setText('kpi-cpaApply', fmt(a.cpaApply, 'yen'));
+    setText('kpi-spend', fmt(a.spend, 'yen'));
+    setText('kpi-transitionCount', fmt(a.applications, 'int'));
+
+    setText('kpi-docTotal', fmt(a.doc.total, 'int'));
+    setText('pill-doc-inprogress', a.doc.inprogress);
+    setText('pill-doc-pass', a.doc.pass);
+    setText('pill-doc-reject', a.doc.reject);
+    setText('pill-doc-withdraw', a.doc.withdraw);
+    setText('kpi-docPassRate', a.docPassRate.toFixed(1) + '%');
+
+    setText('kpi-interviewTotal', fmt(a.interview.total, 'int'));
+    setText('pill-interview-inprogress', a.interview.inprogress);
+    setText('pill-interview-pass', a.interview.pass);
+    setText('pill-interview-reject', a.interview.reject);
+    setText('pill-interview-withdraw', a.interview.withdraw);
+    setText('kpi-interviewPassRate', a.interviewPassRate.toFixed(1) + '%');
+
+    setText('kpi-offerTotal', fmt(a.offer.total, 'int'));
+    setText('pill-offer-inprogress', a.offer.inprogress);
+    setText('pill-offer-pass', a.offer.pass);
+    setText('pill-offer-withdraw', a.offer.withdraw);
+    setText('kpi-offerPassRate', a.offerPassRate.toFixed(1) + '%');
+
+    setText('kpi-hired', fmt(a.hired, 'int'));
+    setText('kpi-cpaHire', fmt(a.cpaHire, 'yen'));
+
+    Object.keys(CHARTS).forEach(function (key) {
+      setText('chart-' + key + '-title', fmt(a[key], CHARTS[key].format));
+      var ratio = BASE[key] ? a[key] / BASE[key] : 0;
+      renderChart(key, ratio);
+    });
+  }
+
+  window.dashApplyFilters = dashApplyFilters;
+
+  window.dashSetGranularity = function (el) {
+    var group = el.parentElement.querySelectorAll('span');
+    for (var i = 0; i < group.length; i++) group[i].classList.remove('active');
+    el.classList.add('active');
+    granularity = el.textContent === '週次' ? 'week' : el.textContent === '月次' ? 'month' : 'day';
+    dashApplyFilters();
+  };
+
+  dashApplyFilters();
+})();
+</script>
+</body>
+</html>
