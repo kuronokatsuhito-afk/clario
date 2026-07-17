@@ -1459,7 +1459,7 @@
           io.unobserve(entry.target);
         }
       });
-    }, opts || { threshold: 0.2, rootMargin: '0px 0px -6% 0px' });
+    }, opts || { threshold: 0, rootMargin: '0px 0px -6% 0px' });
     list.forEach(function (el) { io.observe(el); });
   }
 
