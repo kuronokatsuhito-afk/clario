@@ -194,6 +194,12 @@
     font-size: 0.9rem;
   }
 
+  .nav-primary {
+    display: flex;
+    align-items: center;
+    gap: clamp(1.1rem, 2.4vw, 1.8rem);
+  }
+
   nav a {
     text-decoration: none;
     color: var(--on-navy-soft);
@@ -818,7 +824,7 @@
     <span class="full">株式会社クラリオ</span>
   </a>
   <nav>
-    <span class="nav-primary" style="display:flex; align-items:center; gap:inherit;">
+    <span class="nav-primary">
       <a href="#services">事業内容</a>
       <a href="#flow">支援フロー</a>
       <a href="#dashboard">ダッシュボード</a>
