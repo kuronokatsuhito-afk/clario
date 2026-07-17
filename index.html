@@ -227,8 +227,63 @@
 
   nav a.cta-link:hover { border-color: #E3B563; color: #E3B563; background: rgba(227, 181, 99, 0.1); }
 
+  .nav-toggle {
+    display: none;
+    flex: none;
+    width: 2.2rem;
+    height: 2.2rem;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: var(--on-navy);
+    cursor: pointer;
+  }
+
+  .nav-toggle svg { width: 1.35rem; height: 1.35rem; }
+  .nav-toggle .icon-close { display: none; }
+  .nav-toggle[aria-expanded="true"] .icon-burger { display: none; }
+  .nav-toggle[aria-expanded="true"] .icon-close { display: block; }
+
+  .mobile-nav {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 39;
+    background: var(--navy);
+    padding: 5.5rem clamp(1.25rem, 6vw, 2.5rem) 2rem;
+    flex-direction: column;
+    overflow-y: auto;
+  }
+
+  .mobile-nav.is-open { display: flex; }
+
+  .mobile-nav a {
+    text-decoration: none;
+    color: var(--on-navy);
+    font-size: 1.15rem;
+    padding: 1.05rem 0.15rem;
+    border-bottom: 1px solid var(--line-on-navy);
+  }
+
+  .mobile-nav a.cta-link {
+    margin-top: 1.5rem;
+    text-align: center;
+    border: 1px solid #E3B563;
+    color: #E3B563;
+    border-radius: 2px;
+    padding: 0.9rem;
+  }
+
   @media (max-width: 780px) {
     nav .nav-primary { display: none; }
+    header nav > a.cta-link { display: none; }
+    .nav-toggle { display: inline-flex; }
+  }
+
+  @media (min-width: 781px) {
+    .mobile-nav { display: none !important; }
   }
 
   a:focus-visible, button:focus-visible {
@@ -771,8 +826,21 @@
       <a href="#company">会社概要</a>
     </span>
     <a class="cta-link" href="#contact">お問い合わせ</a>
+    <button type="button" class="nav-toggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobileNav" onclick="toggleMobileNav(this)">
+      <svg class="icon-burger" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
   </nav>
 </header>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="#services" onclick="closeMobileNav()">事業内容</a>
+  <a href="#flow" onclick="closeMobileNav()">支援フロー</a>
+  <a href="#dashboard" onclick="closeMobileNav()">ダッシュボード</a>
+  <a href="#about" onclick="closeMobileNav()">私たちについて</a>
+  <a href="#company" onclick="closeMobileNav()">会社概要</a>
+  <a class="cta-link" href="#contact" onclick="closeMobileNav()">お問い合わせ</a>
+</div>
 
 <main id="top">
 
@@ -1393,6 +1461,29 @@
     el.classList.add('is-visible');
   });
 })();
+
+function toggleMobileNav(btn) {
+  var panel = document.getElementById('mobileNav');
+  var isOpen = panel.classList.toggle('is-open');
+  btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  document.body.style.overflow = isOpen ? 'hidden' : '';
+}
+
+function closeMobileNav() {
+  var panel = document.getElementById('mobileNav');
+  panel.classList.remove('is-open');
+  var btn = document.querySelector('.nav-toggle');
+  if (btn) btn.setAttribute('aria-expanded', 'false');
+  document.body.style.overflow = '';
+}
+
+window.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape') closeMobileNav();
+});
+
+window.addEventListener('resize', function () {
+  if (window.innerWidth > 780) closeMobileNav();
+});
 
 function dashSetPeriod(btn) {
   var group = btn.parentElement.querySelectorAll('.dash-pill-btn');
