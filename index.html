@@ -337,11 +337,11 @@
     overflow: visible;
   }
   .section-crease.tl { top: -1rem; left: -2.5rem; }
-  .section-crease.tr { top: -1rem; right: -2.5rem; }
+  .section-crease.br { bottom: -1rem; right: -2.5rem; }
 
   @media (max-width: 900px) {
     .section-crease.tl { left: -0.5rem; }
-    .section-crease.tr { right: -0.5rem; }
+    .section-crease.br { right: -0.5rem; }
   }
 
   .section-crease line {
@@ -373,7 +373,7 @@
 
   .col { position: relative; max-width: 880px; margin: 0 auto; }
 
-  .section-head { max-width: 620px; margin-bottom: clamp(2.5rem, 5vw, 3.5rem); }
+  .section-head { position: relative; max-width: 620px; margin-bottom: clamp(2.5rem, 5vw, 3.5rem); }
 
   .section-head h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); font-weight: 600; letter-spacing: 0.01em; }
 
@@ -982,10 +982,13 @@
   <section id="services">
     <div class="section-dots tr" data-reveal aria-hidden="true"></div>
     <div class="col">
-      <svg class="section-crease tl bold" data-reveal aria-hidden="true" viewBox="0 0 160 128" width="160" height="128">
-        <line x1="60" y1="0" x2="0" y2="47"/>
-      </svg>
       <div class="section-head" data-reveal>
+        <svg class="section-crease tl bold" data-reveal aria-hidden="true" viewBox="0 0 160 128" width="160" height="128">
+          <line x1="60" y1="0" x2="0" y2="47"/>
+        </svg>
+        <svg class="section-crease br bold" data-reveal aria-hidden="true" viewBox="0 0 160 128" width="160" height="128">
+          <line x1="100" y1="128" x2="160" y2="81"/>
+        </svg>
         <span class="eyebrow">SERVICES</span>
         <h2>事業内容</h2>
         <p>採用活動を4つの角度から支援します。</p>
@@ -1014,10 +1017,13 @@
   <section id="flow">
     <div class="section-dots bl" data-reveal aria-hidden="true"></div>
     <div class="col">
-      <svg class="section-crease tr bold" data-reveal aria-hidden="true" viewBox="0 0 160 128" width="160" height="128">
-        <line x1="100" y1="0" x2="160" y2="47"/>
-      </svg>
       <div class="section-head" data-reveal>
+        <svg class="section-crease tl bold" data-reveal aria-hidden="true" viewBox="0 0 160 128" width="160" height="128">
+          <line x1="60" y1="0" x2="0" y2="47"/>
+        </svg>
+        <svg class="section-crease br bold" data-reveal aria-hidden="true" viewBox="0 0 160 128" width="160" height="128">
+          <line x1="100" y1="128" x2="160" y2="81"/>
+        </svg>
         <span class="eyebrow">PROCESS</span>
         <h2>ご支援の流れ</h2>
         <p>採用活動は、この7つのフェーズを一巡します。検証結果を戦略に戻し、精度を上げていきます。</p>
@@ -1079,11 +1085,15 @@
   <section id="dashboard" style="background: var(--paper-raised); border-top: 1px solid var(--line-soft); border-bottom: 1px solid var(--line-soft);">
     <div class="section-dots tr" data-reveal aria-hidden="true"></div>
     <div class="col">
-      <svg class="section-crease tl" data-reveal aria-hidden="true" viewBox="0 0 160 128" width="160" height="128">
-        <polygon class="facet" points="0,0 60,0 0,47"/>
-        <line x1="60" y1="0" x2="0" y2="47"/>
-      </svg>
       <div class="section-head" data-reveal>
+        <svg class="section-crease tl" data-reveal aria-hidden="true" viewBox="0 0 160 128" width="160" height="128">
+          <polygon class="facet" points="0,0 60,0 0,47"/>
+          <line x1="60" y1="0" x2="0" y2="47"/>
+        </svg>
+        <svg class="section-crease br" data-reveal aria-hidden="true" viewBox="0 0 160 128" width="160" height="128">
+          <polygon class="facet" points="160,128 100,128 160,81"/>
+          <line x1="100" y1="128" x2="160" y2="81"/>
+        </svg>
         <span class="eyebrow">DASHBOARD</span>
         <h2>ダッシュボードで進捗を可視化</h2>
         <p>ATS（採用管理システム）からダウンロードできるデータをもとに構築。応募から採用までの数字を、ひとつの画面で確認できます。</p>
@@ -1477,10 +1487,13 @@
   <section id="about">
     <div class="section-dots tr" data-reveal aria-hidden="true"></div>
     <div class="col">
-      <svg class="section-crease tl" data-reveal aria-hidden="true" viewBox="0 0 160 128" width="160" height="128">
-        <line x1="60" y1="0" x2="0" y2="47"/>
-      </svg>
       <div class="section-head" data-reveal>
+        <svg class="section-crease tl" data-reveal aria-hidden="true" viewBox="0 0 160 128" width="160" height="128">
+          <line x1="60" y1="0" x2="0" y2="47"/>
+        </svg>
+        <svg class="section-crease br" data-reveal aria-hidden="true" viewBox="0 0 160 128" width="160" height="128">
+          <line x1="100" y1="128" x2="160" y2="81"/>
+        </svg>
         <span class="eyebrow">ABOUT</span>
         <h2>私たちについて</h2>
       </div>
@@ -1514,10 +1527,13 @@
   <section id="company" style="background: var(--paper-raised); border-top: 1px solid var(--line-soft); border-bottom: 1px solid var(--line-soft);">
     <div class="section-dots br" data-reveal aria-hidden="true"></div>
     <div class="col">
-      <svg class="section-crease tr bold" data-reveal aria-hidden="true" viewBox="0 0 160 128" width="160" height="128">
-        <line x1="100" y1="0" x2="160" y2="47"/>
-      </svg>
       <div class="section-head" data-reveal>
+        <svg class="section-crease tl bold" data-reveal aria-hidden="true" viewBox="0 0 160 128" width="160" height="128">
+          <line x1="60" y1="0" x2="0" y2="47"/>
+        </svg>
+        <svg class="section-crease br bold" data-reveal aria-hidden="true" viewBox="0 0 160 128" width="160" height="128">
+          <line x1="100" y1="128" x2="160" y2="81"/>
+        </svg>
         <span class="eyebrow">COMPANY</span>
         <h2>会社概要</h2>
       </div>
@@ -1553,10 +1569,13 @@
   <section id="contact" class="contact-section">
     <div class="section-dots bl" data-reveal aria-hidden="true"></div>
     <div class="col contact-box" data-reveal>
-      <svg class="section-crease tr" data-reveal aria-hidden="true" viewBox="0 0 160 128" width="160" height="128">
-        <line x1="100" y1="0" x2="160" y2="47"/>
-      </svg>
-      <div>
+      <div style="position: relative;">
+        <svg class="section-crease tl" data-reveal aria-hidden="true" viewBox="0 0 160 128" width="160" height="128">
+          <line x1="60" y1="0" x2="0" y2="47"/>
+        </svg>
+        <svg class="section-crease br" data-reveal aria-hidden="true" viewBox="0 0 160 128" width="160" height="128">
+          <line x1="100" y1="128" x2="160" y2="81"/>
+        </svg>
         <span class="eyebrow">CONTACT</span>
         <h2 class="serif" style="font-size: clamp(1.5rem, 3vw, 1.9rem); font-weight: 600;">採用に関するご相談は、<br>お気軽にご連絡ください。</h2>
         <p class="mono"><a href="mailto:kurono.katsuhito@clario.co.jp">kurono.katsuhito@clario.co.jp</a></p>
