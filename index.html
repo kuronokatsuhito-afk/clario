@@ -8,71 +8,76 @@
 <style>
   :root {
     --paper: #FFFFFF;
-    --paper-raised: #F6F6F3;
-    --ink: #14181F;
-    --ink-soft: #575F6B;
-    --ink-faint: #8A93A0;
-    --line: rgba(20, 24, 31, 0.12);
-    --line-soft: rgba(20, 24, 31, 0.07);
-    --accent: #B8892F;
-    --accent-strong: #8C6520;
-    --accent-tint: rgba(184, 137, 47, 0.10);
-    --shadow: 0 1px 2px rgba(20, 24, 31, 0.05);
-    --navy: #0F1620;
-    --navy-raised: #171F2C;
-    --on-navy: #F3F5F8;
-    --on-navy-soft: #9BA6B8;
-    --line-on-navy: rgba(255, 255, 255, 0.12);
+    --paper-raised: #F5F5F6;
+    --ink: #24272C;
+    --ink-soft: #575C63;
+    --ink-faint: #8B9096;
+    --line: rgba(36, 39, 44, 0.13);
+    --line-soft: rgba(36, 39, 44, 0.08);
+    --accent: #5B6470;
+    --accent-strong: #363B41;
+    --accent-tint: rgba(91, 100, 112, 0.08);
+    --shadow: 0 1px 2px rgba(36, 39, 44, 0.06);
+    --metal-1: #FCFCFC;
+    --metal-2: #E7E8EA;
+    --metal-3: #CBCDD0;
+    --metal-4: #9FA2A7;
   }
 
   @media (prefers-color-scheme: dark) {
     :root {
-      --paper: #12161C;
-      --paper-raised: #191F27;
-      --ink: #ECEEF2;
-      --ink-soft: #AEB6C2;
-      --ink-faint: #7C8492;
-      --line: rgba(236, 238, 242, 0.14);
-      --line-soft: rgba(236, 238, 242, 0.08);
-      --accent: #E3B563;
-      --accent-strong: #F0C67C;
-      --accent-tint: rgba(227, 181, 99, 0.14);
+      --paper: #1B1D20;
+      --paper-raised: #222428;
+      --ink: #EDEEEF;
+      --ink-soft: #B7BABD;
+      --ink-faint: #82868A;
+      --line: rgba(237, 238, 239, 0.14);
+      --line-soft: rgba(237, 238, 239, 0.08);
+      --accent: #9AA0A8;
+      --accent-strong: #C3C7CC;
+      --accent-tint: rgba(154, 160, 168, 0.14);
       --shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-      --navy: #0B0F16;
-      --navy-raised: #141B26;
+      --metal-1: #313337;
+      --metal-2: #3B3D41;
+      --metal-3: #4A4D51;
+      --metal-4: #5C5F64;
     }
   }
 
   :root[data-theme="dark"] {
-    --paper: #12161C;
-    --paper-raised: #191F27;
-    --ink: #ECEEF2;
-    --ink-soft: #AEB6C2;
-    --ink-faint: #7C8492;
-    --line: rgba(236, 238, 242, 0.14);
-    --line-soft: rgba(236, 238, 242, 0.08);
-    --accent: #E3B563;
-    --accent-strong: #F0C67C;
-    --accent-tint: rgba(227, 181, 99, 0.14);
+    --paper: #1B1D20;
+    --paper-raised: #222428;
+    --ink: #EDEEEF;
+    --ink-soft: #B7BABD;
+    --ink-faint: #82868A;
+    --line: rgba(237, 238, 239, 0.14);
+    --line-soft: rgba(237, 238, 239, 0.08);
+    --accent: #9AA0A8;
+    --accent-strong: #C3C7CC;
+    --accent-tint: rgba(154, 160, 168, 0.14);
     --shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-    --navy: #0B0F16;
-    --navy-raised: #141B26;
+    --metal-1: #313337;
+    --metal-2: #3B3D41;
+    --metal-3: #4A4D51;
+    --metal-4: #5C5F64;
   }
 
   :root[data-theme="light"] {
     --paper: #FFFFFF;
-    --paper-raised: #F6F6F3;
-    --ink: #14181F;
-    --ink-soft: #575F6B;
-    --ink-faint: #8A93A0;
-    --line: rgba(20, 24, 31, 0.12);
-    --line-soft: rgba(20, 24, 31, 0.07);
-    --accent: #B8892F;
-    --accent-strong: #8C6520;
-    --accent-tint: rgba(184, 137, 47, 0.10);
-    --shadow: 0 1px 2px rgba(20, 24, 31, 0.05);
-    --navy: #0F1620;
-    --navy-raised: #171F2C;
+    --paper-raised: #F5F5F6;
+    --ink: #24272C;
+    --ink-soft: #575C63;
+    --ink-faint: #8B9096;
+    --line: rgba(36, 39, 44, 0.13);
+    --line-soft: rgba(36, 39, 44, 0.08);
+    --accent: #5B6470;
+    --accent-strong: #363B41;
+    --accent-tint: rgba(91, 100, 112, 0.08);
+    --shadow: 0 1px 2px rgba(36, 39, 44, 0.06);
+    --metal-1: #FCFCFC;
+    --metal-2: #E7E8EA;
+    --metal-3: #CBCDD0;
+    --metal-4: #9FA2A7;
   }
 
   * { box-sizing: border-box; }
@@ -116,7 +121,7 @@
     font-size: 0.72rem;
     letter-spacing: 0.22em;
     text-transform: uppercase;
-    color: #E3B563;
+    color: var(--accent-strong);
     margin-bottom: 0.9rem;
   }
 
@@ -125,12 +130,12 @@
     width: 7px;
     height: 7px;
     border-radius: 50%;
-    background: #E3B563;
+    background: var(--accent-strong);
     animation: pulse 2.6s ease-in-out infinite;
   }
 
   @keyframes pulse {
-    0%, 100% { box-shadow: 0 0 0 0 rgba(227, 181, 99, 0.35); }
+    0%, 100% { box-shadow: 0 0 0 0 rgba(91, 100, 112, 0.3); }
     50% { box-shadow: 0 0 0 7px transparent; }
   }
 
@@ -160,31 +165,36 @@
     align-items: center;
     justify-content: space-between;
     padding: 1.1rem clamp(1.25rem, 4vw, 3rem);
-    background: color-mix(in srgb, var(--navy) 92%, transparent);
+    background: color-mix(in srgb, var(--paper) 90%, transparent);
     backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--line-on-navy);
+    border-bottom: 1px solid var(--line-soft);
   }
 
   .wordmark {
     display: flex;
-    align-items: baseline;
-    gap: 0.65rem;
+    align-items: center;
+    gap: 0.6rem;
     text-decoration: none;
-    color: var(--on-navy);
+    color: var(--ink);
   }
 
+  .wordmark .logo-ring { flex: none; display: block; width: 1.9rem; height: 1.9rem; }
+
   .wordmark .mark {
-    font-family: ui-monospace, "SF Mono", "Roboto Mono", monospace;
-    font-size: 0.95rem;
-    letter-spacing: 0.32em;
+    font-family: "Hiragino Mincho ProN", "YuMincho", "Yu Mincho", "Noto Serif JP", serif;
+    font-size: 1.15rem;
+    letter-spacing: 0.02em;
     font-weight: 600;
-    color: #E3B563;
+    color: var(--ink);
   }
 
   .wordmark .full {
-    font-size: 0.95rem;
-    color: var(--on-navy-soft);
+    font-size: 0.85rem;
+    color: var(--ink-faint);
     letter-spacing: 0.02em;
+    padding-left: 0.6rem;
+    margin-left: 0.1rem;
+    border-left: 1px solid var(--line);
   }
 
   nav {
@@ -202,7 +212,7 @@
 
   nav a {
     text-decoration: none;
-    color: var(--on-navy-soft);
+    color: var(--ink-soft);
     transition: color 0.15s ease;
   }
 
@@ -215,23 +225,23 @@
     right: 100%;
     bottom: -2px;
     height: 1px;
-    background: #E3B563;
+    background: var(--accent-strong);
     transition: right 0.25s ease;
   }
 
   nav a:not(.cta-link):hover::after { right: 0; }
 
-  nav a:hover, nav a:focus-visible { color: var(--on-navy); }
+  nav a:hover, nav a:focus-visible { color: var(--ink); }
 
   nav a.cta-link {
-    color: var(--on-navy);
-    border: 1px solid var(--line-on-navy);
+    color: var(--ink);
+    border: 1px solid var(--line);
     padding: 0.5rem 1.1rem;
     border-radius: 2px;
     transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease;
   }
 
-  nav a.cta-link:hover { border-color: #E3B563; color: #E3B563; background: rgba(227, 181, 99, 0.1); }
+  nav a.cta-link:hover { border-color: var(--accent-strong); color: var(--accent-strong); background: var(--accent-tint); }
 
   .nav-toggle {
     display: none;
@@ -243,7 +253,7 @@
     padding: 0;
     border: none;
     background: transparent;
-    color: var(--on-navy);
+    color: var(--ink);
     cursor: pointer;
   }
 
@@ -257,7 +267,7 @@
     position: fixed;
     inset: 0;
     z-index: 39;
-    background: var(--navy);
+    background: var(--paper);
     padding: 5.5rem clamp(1.25rem, 6vw, 2.5rem) 2rem;
     flex-direction: column;
     overflow-y: auto;
@@ -267,17 +277,17 @@
 
   .mobile-nav a {
     text-decoration: none;
-    color: var(--on-navy);
+    color: var(--ink);
     font-size: 1.15rem;
     padding: 1.05rem 0.15rem;
-    border-bottom: 1px solid var(--line-on-navy);
+    border-bottom: 1px solid var(--line);
   }
 
   .mobile-nav a.cta-link {
     margin-top: 1.5rem;
     text-align: center;
-    border: 1px solid #E3B563;
-    color: #E3B563;
+    border: 1px solid var(--accent-strong);
+    color: var(--accent-strong);
     border-radius: 2px;
     padding: 0.9rem;
   }
@@ -315,8 +325,10 @@
     position: relative;
     padding: clamp(6rem, 16vw, 10.5rem) clamp(1.25rem, 4vw, 3rem) clamp(5.5rem, 11vw, 8rem);
     overflow: hidden;
-    background: var(--navy);
-    color: var(--on-navy);
+    background:
+      radial-gradient(60rem 40rem at 28% 10%, #FFFFFF 0%, transparent 55%),
+      linear-gradient(128deg, #F8F8F9 0%, #EFF0F1 42%, #E3E4E6 60%, #F4F5F5 100%);
+    color: var(--ink);
   }
 
   .hero-glow {
@@ -326,39 +338,32 @@
     z-index: 0;
   }
 
-  .hero-glow .circle {
+  .hero-glow .facet {
     position: absolute;
-    border-radius: 50%;
-    filter: blur(3px);
+    inset: -10% -10% -10% 38%;
+    background: linear-gradient(155deg, rgba(36, 39, 44, 0.05), rgba(36, 39, 44, 0.1) 45%, rgba(36, 39, 44, 0.02) 100%);
+    clip-path: polygon(38% 0%, 100% 0%, 100% 100%, 8% 100%);
+  }
+
+  .hero-glow .sheen {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(115deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0) 22%);
+    mix-blend-mode: screen;
+  }
+
+  .hero-glow .dots {
+    position: absolute;
+    right: -2rem;
+    bottom: -3rem;
+    width: 20rem;
+    height: 16rem;
+    background-image: radial-gradient(var(--metal-4) 1.2px, transparent 1.6px);
+    background-size: 15px 15px;
+    -webkit-mask-image: radial-gradient(circle at bottom right, black, transparent 68%);
+    mask-image: radial-gradient(circle at bottom right, black, transparent 68%);
     opacity: 0.55;
   }
-
-  .hero-glow .c1 {
-    width: 34rem; height: 34rem; right: -9rem; top: -12rem;
-    background: radial-gradient(circle at 35% 35%, rgba(227, 181, 99, 0.35), rgba(227, 181, 99, 0) 68%);
-    animation: drift 26s ease-in-out infinite alternate;
-  }
-
-  .hero-glow .c2 {
-    width: 20rem; height: 20rem; left: -6rem; bottom: -8rem;
-    background: radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0) 70%);
-    animation: drift 20s ease-in-out infinite alternate-reverse;
-  }
-
-  .hero-glow .ring {
-    width: 26rem; height: 26rem; right: 8%; bottom: -14rem;
-    border: 1px solid rgba(227, 181, 99, 0.22);
-    background: none;
-    filter: none;
-    opacity: 1;
-  }
-
-  @keyframes drift {
-    from { transform: translate(0, 0) scale(1); }
-    to { transform: translate(-4%, 5%) scale(1.08); }
-  }
-
-  @media (prefers-reduced-motion: reduce) { .hero-glow .circle { animation: none; } }
 
   .hero-inner { position: relative; z-index: 1; max-width: 820px; }
 
@@ -367,7 +372,7 @@
     font-family: ui-monospace, "SF Mono", "Roboto Mono", monospace;
     font-size: 0.82rem;
     letter-spacing: 0.16em;
-    color: var(--on-navy-soft);
+    color: var(--ink-faint);
     margin: 1.3rem 0 0;
   }
 
@@ -376,10 +381,10 @@
     font-weight: 600;
     line-height: 1.3;
     letter-spacing: 0.01em;
-    color: var(--on-navy);
+    color: var(--ink);
   }
 
-  .hero .lede { margin: 1.9rem 0 0; max-width: 32rem; font-size: 1.05rem; color: var(--on-navy-soft); }
+  .hero .lede { margin: 1.9rem 0 0; max-width: 32rem; font-size: 1.05rem; color: var(--ink-soft); }
 
   .hero-actions { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2.75rem; }
 
@@ -397,16 +402,10 @@
 
   .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(23, 34, 42, 0.12); }
 
-  .btn-primary { background: var(--ink); color: var(--paper-raised); }
+  .btn-primary { background: var(--ink); color: var(--paper); }
 
   .btn-ghost { border-color: var(--line); color: var(--ink); }
-  .btn-ghost:hover { border-color: var(--accent); color: var(--accent-strong); box-shadow: none; }
-
-  .hero .btn-primary { background: #E3B563; color: var(--navy); }
-  .hero .btn-primary:hover { box-shadow: 0 6px 18px rgba(227, 181, 99, 0.25); }
-
-  .hero .btn-ghost { border-color: var(--line-on-navy); color: var(--on-navy); }
-  .hero .btn-ghost:hover { border-color: #E3B563; color: #E3B563; box-shadow: none; }
+  .btn-ghost:hover { border-color: var(--accent-strong); color: var(--accent-strong); box-shadow: none; }
 
   /* ---------- trust strip ---------- */
 
@@ -811,16 +810,27 @@
     flex-wrap: wrap;
     gap: 0.6rem;
     font-size: 0.8rem;
-    color: var(--on-navy-soft);
-    background: var(--navy);
-    border-top: 1px solid var(--line-on-navy);
+    color: var(--ink-faint);
+    background: var(--paper-raised);
+    border-top: 1px solid var(--line-soft);
   }
 </style>
 </head>
 <body>
 <header>
   <a class="wordmark" href="#top">
-    <span class="mark">CLARIO</span>
+    <svg class="logo-ring" viewBox="0 0 40 40" aria-hidden="true">
+      <defs>
+        <linearGradient id="ringGradHeader" x1="15%" y1="10%" x2="85%" y2="90%">
+          <stop offset="0%" stop-color="#FDFDFD"/>
+          <stop offset="35%" stop-color="#C9CBCE"/>
+          <stop offset="65%" stop-color="#8B8F94"/>
+          <stop offset="100%" stop-color="#54575C"/>
+        </linearGradient>
+      </defs>
+      <circle cx="20" cy="20" r="13.5" fill="none" stroke="url(#ringGradHeader)" stroke-width="6.5" stroke-linecap="round" stroke-dasharray="66 16" transform="rotate(125 20 20)"/>
+    </svg>
+    <span class="mark">Clario</span>
     <span class="full">株式会社クラリオ</span>
   </a>
   <nav>
@@ -852,9 +862,9 @@
 
   <section class="hero">
     <div class="hero-glow" aria-hidden="true">
-      <div class="circle c1"></div>
-      <div class="circle c2"></div>
-      <div class="circle ring"></div>
+      <div class="facet"></div>
+      <div class="dots"></div>
+      <div class="sheen"></div>
     </div>
     <div class="hero-inner">
       <span class="eyebrow-row" data-reveal style="transition-delay:0s;"><span class="beacon" aria-hidden="true"></span>RECRUITMENT CONSULTING</span>
@@ -1414,7 +1424,11 @@
         </div>
         <div class="company-row">
           <dt>所在地</dt>
-          <dd>東京都練馬区高野台3-24-1</dd>
+          <dd>〒117-0033　東京都練馬区高野台3丁目24-1</dd>
+        </div>
+        <div class="company-row">
+          <dt>連絡先</dt>
+          <dd>TEL：080-6913-5087　／　Email：<a href="mailto:kurono.katsuhito@clario.co.jp" style="color:inherit; text-decoration:underline; text-underline-offset:2px;">kurono.katsuhito@clario.co.jp</a></dd>
         </div>
         <div class="company-row">
           <dt>事業内容</dt>
@@ -1430,6 +1444,7 @@
         <span class="eyebrow">CONTACT</span>
         <h2 class="serif" style="font-size: clamp(1.5rem, 3vw, 1.9rem); font-weight: 600;">採用に関するご相談は、<br>お気軽にご連絡ください。</h2>
         <p class="mono"><a href="mailto:kurono.katsuhito@clario.co.jp">kurono.katsuhito@clario.co.jp</a></p>
+        <p class="mono" style="margin-top:0.4rem;">TEL：080-6913-5087</p>
       </div>
       <a class="btn btn-primary" href="mailto:kurono.katsuhito@clario.co.jp">メールで問い合わせる</a>
     </div>
@@ -1438,8 +1453,21 @@
 </main>
 
 <footer>
-  <span>© 2026 Clario Inc.</span>
-  <span>株式会社クラリオ｜東京都練馬区高野台3-24-1</span>
+  <span style="display:flex; align-items:center; gap:0.5rem;">
+    <svg viewBox="0 0 40 40" aria-hidden="true" style="width:1.2rem; height:1.2rem;">
+      <defs>
+        <linearGradient id="ringGradFooter" x1="15%" y1="10%" x2="85%" y2="90%">
+          <stop offset="0%" stop-color="#FDFDFD"/>
+          <stop offset="35%" stop-color="#C9CBCE"/>
+          <stop offset="65%" stop-color="#8B8F94"/>
+          <stop offset="100%" stop-color="#54575C"/>
+        </linearGradient>
+      </defs>
+      <circle cx="20" cy="20" r="13.5" fill="none" stroke="url(#ringGradFooter)" stroke-width="6.5" stroke-linecap="round" stroke-dasharray="66 16" transform="rotate(125 20 20)"/>
+    </svg>
+    © 2026 Clario Inc.
+  </span>
+  <span>株式会社クラリオ｜〒117-0033 東京都練馬区高野台3丁目24-1</span>
 </footer>
 
 <script>
