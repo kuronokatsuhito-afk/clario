@@ -340,17 +340,16 @@
   .section-crease.tr { top: 0; right: 0; }
 
   .section-crease line {
-    stroke: var(--metal-3);
-    stroke-width: 1.5;
+    stroke: var(--ink-faint);
+    stroke-width: 2.5;
     fill: none;
-    stroke-dasharray: 70;
-    stroke-dashoffset: 70;
-    transition: stroke-dashoffset 0.5s cubic-bezier(0.6, 0, 0.15, 1) 0.45s;
+    stroke-dasharray: 130;
+    stroke-dashoffset: 130;
+    transition: stroke-dashoffset 0.55s cubic-bezier(0.6, 0, 0.15, 1) 0.45s;
   }
   .section-crease.is-visible line { stroke-dashoffset: 0; }
-  .section-crease .x2 { transition-delay: 0.65s; }
 
-  .section-crease.bold line { stroke: var(--accent-strong); stroke-width: 2.5; }
+  .section-crease.bold line { stroke: var(--accent-strong); stroke-width: 4; }
 
   .section-crease .facet {
     fill: var(--accent-tint);
@@ -977,9 +976,8 @@
 
   <section id="services">
     <div class="section-dots tr" data-reveal aria-hidden="true"></div>
-    <svg class="section-crease tl" data-reveal aria-hidden="true" viewBox="0 0 96 76" width="96" height="76">
-      <line x1="6" y1="0" x2="34" y2="30"/>
-      <line class="x2" x1="34" y1="0" x2="6" y2="30"/>
+    <svg class="section-crease tl bold" data-reveal aria-hidden="true" viewBox="0 0 160 128" width="160" height="128">
+      <line x1="60" y1="0" x2="0" y2="47"/>
     </svg>
     <div class="col">
       <div class="section-head" data-reveal>
@@ -1010,8 +1008,8 @@
 
   <section id="flow">
     <div class="section-dots bl" data-reveal aria-hidden="true"></div>
-    <svg class="section-crease tr bold" data-reveal aria-hidden="true" viewBox="0 0 96 76" width="96" height="76">
-      <line x1="60" y1="0" x2="96" y2="28"/>
+    <svg class="section-crease tr bold" data-reveal aria-hidden="true" viewBox="0 0 160 128" width="160" height="128">
+      <line x1="100" y1="0" x2="160" y2="47"/>
     </svg>
     <div class="col">
       <div class="section-head" data-reveal>
@@ -1075,9 +1073,9 @@
 
   <section id="dashboard" style="background: var(--paper-raised); border-top: 1px solid var(--line-soft); border-bottom: 1px solid var(--line-soft);">
     <div class="section-dots tr" data-reveal aria-hidden="true"></div>
-    <svg class="section-crease tl" data-reveal aria-hidden="true" viewBox="0 0 96 76" width="96" height="76">
-      <polygon class="facet" points="0,0 36,0 0,28"/>
-      <line x1="36" y1="0" x2="0" y2="28"/>
+    <svg class="section-crease tl" data-reveal aria-hidden="true" viewBox="0 0 160 128" width="160" height="128">
+      <polygon class="facet" points="0,0 60,0 0,47"/>
+      <line x1="60" y1="0" x2="0" y2="47"/>
     </svg>
     <div class="col">
       <div class="section-head" data-reveal>
@@ -1473,8 +1471,8 @@
 
   <section id="about">
     <div class="section-dots tr" data-reveal aria-hidden="true"></div>
-    <svg class="section-crease tl" data-reveal aria-hidden="true" viewBox="0 0 96 76" width="96" height="76">
-      <line x1="36" y1="0" x2="0" y2="28"/>
+    <svg class="section-crease tl" data-reveal aria-hidden="true" viewBox="0 0 160 128" width="160" height="128">
+      <line x1="60" y1="0" x2="0" y2="47"/>
     </svg>
     <div class="col">
       <div class="section-head" data-reveal>
@@ -1510,8 +1508,8 @@
 
   <section id="company" style="background: var(--paper-raised); border-top: 1px solid var(--line-soft); border-bottom: 1px solid var(--line-soft);">
     <div class="section-dots br" data-reveal aria-hidden="true"></div>
-    <svg class="section-crease tr bold" data-reveal aria-hidden="true" viewBox="0 0 96 76" width="96" height="76">
-      <line x1="60" y1="0" x2="96" y2="28"/>
+    <svg class="section-crease tr bold" data-reveal aria-hidden="true" viewBox="0 0 160 128" width="160" height="128">
+      <line x1="100" y1="0" x2="160" y2="47"/>
     </svg>
     <div class="col">
       <div class="section-head" data-reveal>
@@ -1549,9 +1547,8 @@
 
   <section id="contact" class="contact-section">
     <div class="section-dots bl" data-reveal aria-hidden="true"></div>
-    <svg class="section-crease tr" data-reveal aria-hidden="true" viewBox="0 0 96 76" width="96" height="76">
-      <line x1="90" y1="0" x2="62" y2="30"/>
-      <line class="x2" x1="62" y1="0" x2="90" y2="30"/>
+    <svg class="section-crease tr" data-reveal aria-hidden="true" viewBox="0 0 160 128" width="160" height="128">
+      <line x1="100" y1="0" x2="160" y2="47"/>
     </svg>
     <div class="col contact-box" data-reveal>
       <div>
