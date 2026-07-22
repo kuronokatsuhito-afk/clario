@@ -325,9 +325,7 @@
     position: relative;
     padding: clamp(6rem, 16vw, 10.5rem) clamp(1.25rem, 4vw, 3rem) clamp(5.5rem, 11vw, 8rem);
     overflow: hidden;
-    background:
-      radial-gradient(60rem 40rem at 28% 10%, #FFFFFF 0%, transparent 55%),
-      linear-gradient(128deg, #F8F8F9 0%, #EFF0F1 42%, #E3E4E6 60%, #F4F5F5 100%);
+    background: #E7E8E9;
     color: var(--ink);
   }
 
@@ -338,31 +336,44 @@
     z-index: 0;
   }
 
-  .hero-glow .facet {
-    position: absolute;
-    inset: -10% -10% -10% 38%;
-    background: linear-gradient(155deg, rgba(36, 39, 44, 0.05), rgba(36, 39, 44, 0.1) 45%, rgba(36, 39, 44, 0.02) 100%);
-    clip-path: polygon(38% 0%, 100% 0%, 100% 100%, 8% 100%);
-  }
-
-  .hero-glow .sheen {
+  .hero-glow .shine {
     position: absolute;
     inset: 0;
-    background: linear-gradient(115deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0) 22%);
-    mix-blend-mode: screen;
+    background: radial-gradient(52rem 34rem at 52% 4%, #FFFFFF 0%, rgba(255, 255, 255, 0) 58%);
+  }
+
+  .hero-glow .facet-upper {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(118deg, #EBECEE 0%, #CACCCF 100%);
+    clip-path: polygon(64% 0%, 100% 0%, 100% 12%, 86% 39%);
+  }
+
+  .hero-glow .facet-lower {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(104deg, #DCDEE0 0%, #C0C3C6 100%);
+    clip-path: polygon(86% 39%, 100% 12%, 100% 100%, 60% 100%);
+  }
+
+  .hero-glow .seam {
+    position: absolute;
+    inset: 0;
+    clip-path: polygon(63.7% 0%, 64.9% 0%, 86.9% 38.8%, 87.7% 39.6%, 60.9% 100%, 59.7% 100%, 85.7% 39%, 63.7% 0%);
+    background: rgba(255, 255, 255, 0.85);
   }
 
   .hero-glow .dots {
     position: absolute;
-    right: -2rem;
-    bottom: -3rem;
-    width: 20rem;
-    height: 16rem;
+    right: -1rem;
+    bottom: -2.5rem;
+    width: 19rem;
+    height: 15rem;
     background-image: radial-gradient(var(--metal-4) 1.2px, transparent 1.6px);
     background-size: 15px 15px;
     -webkit-mask-image: radial-gradient(circle at bottom right, black, transparent 68%);
     mask-image: radial-gradient(circle at bottom right, black, transparent 68%);
-    opacity: 0.55;
+    opacity: 0.5;
   }
 
   .hero-inner { position: relative; z-index: 1; max-width: 820px; }
@@ -852,9 +863,11 @@
 
   <section class="hero">
     <div class="hero-glow" aria-hidden="true">
-      <div class="facet"></div>
+      <div class="facet-upper"></div>
+      <div class="facet-lower"></div>
       <div class="dots"></div>
-      <div class="sheen"></div>
+      <div class="seam"></div>
+      <div class="shine"></div>
     </div>
     <div class="hero-inner">
       <span class="eyebrow-row" data-reveal style="transition-delay:0s;"><span class="beacon" aria-hidden="true"></span>RECRUITMENT CONSULTING</span>
